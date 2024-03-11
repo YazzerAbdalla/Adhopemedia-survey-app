@@ -1,12 +1,24 @@
-import Image from "next/image";
-import NameOfSite from "./(components)/NameOfSite";
-import MainCard from "./(components)/MainCard";
+"use client";
+import React, { useState } from "react";
+import Home from "./(components)/Pages/Home";
+import Nav from "./(components)/Nav";
 
-export default function Home() {
+import Activity from "./(components)/Pages/Activity";
+import Terms from "./(components)/Pages/Terms";
+const Main = () => {
+  const [navTabs, setNavTabs] = useState("home");
   return (
     <>
-      <NameOfSite />
-      <MainCard />
+      <Nav navTabs={navTabs} setNavTabs={setNavTabs} />
+      {navTabs === "home" ? (
+        <Home />
+      ) : navTabs === "activity" ? (
+        <Activity />
+      ) : (
+        <Terms />
+      )}
     </>
   );
-}
+};
+
+export default Main;
