@@ -17,7 +17,7 @@ export default function Nav() {
       <div className="flex items-center justify-between px-4 lg:px-0">
         <h1 className="font-bold text-white text-2xl">LOGO</h1>
         <button
-          className="focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out  text-white"
+          className="block lg:hidden focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out  text-white"
           onClick={toggleMenu}
         >
           <BsList
