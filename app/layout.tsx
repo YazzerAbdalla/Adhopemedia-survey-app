@@ -4,6 +4,7 @@ import "./globals.css";
 import Nav from "@/Components/Nav";
 import NameOfSite from "@/Components/NameOfSite";
 import MainCard from "@/Components/MainCard";
+import FavouriteCard from "@/Components/FavouriteCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,8 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <Nav />
         <NameOfSite />
-        <MainCard />
+        {/* <MainCard /> */}
+        <FavouriteCard />
         {children}
+       
         </body>
     </html>
   );
