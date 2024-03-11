@@ -35,8 +35,11 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
         } lg:flex lg:items-center lg:w-auto`}
       >
         <div
-          className={`flex flex-col lg:py-0 lg:px-0 font-bold text-lg lg:font-normal lg:text-base py-2 px-4  lg:flex-row  lg:space-x-5 w-full lg:justify-center  bg-gradient-to-r from-[#180437] to-[#410b95] text-white lg:bg-transparent 
-        `}
+          className={`flex flex-col lg:py-0 lg:px-0 font-bold text-lg lg:font-normal lg:text-base py-5  px-4 lg:flex-row  lg:space-x-5 mt-3 w-full lg:justify-center text-white lg:bg-transparent`}
+          style={{
+            background:
+              "linear-gradient(110.43deg, #180437 7.89%, #450B9D 89.43%)",
+          }}
         >
           <div
             onClick={() => {
