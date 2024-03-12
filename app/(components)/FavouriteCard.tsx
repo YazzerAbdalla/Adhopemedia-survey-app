@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function FavouriteCard() {
   return (
     <div
-      className="flex items-center rounded-md gap-6 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2"
+      className="flex items-center rounded-md gap-1 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2"
       style={{
         background:
           "linear-gradient(93.43deg, #8359FE 1.1%, #F274FE 32.78%, #F772FE 58.67%, #FE53F3 71.12%, #FF26E4 100%)",

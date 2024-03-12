@@ -32,11 +32,11 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row w-full py-8 lg:px-28 lg:py-4 px-0">
+    <div className="fixed top-0 z-[1000] flex flex-col lg:flex-row w-full py-8 lg:px-28 lg:py-4 px-0">
       <div className="flex items-center justify-between px-4 lg:px-0">
         <h1 className="font-bold text-white text-2xl">
-        {/* <Image src={"/Logo.svg"} alt="" width={20} height={20} /> */}
-        Logo
+          {/* <Image src={"/Logo.svg"} alt="" width={20} height={20} /> */}
+          Logo
         </h1>
         <button
           className="lg:hidden focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
@@ -49,7 +49,7 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
           />
         </button>
       </div>
-  
+
       <div
         className={`lg:grow ${
           isMenuOpen ? "block" : "hidden"
@@ -57,10 +57,9 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
       >
         <div
           className={`flex flex-col lg:py-0 lg:space-y-0 space-y-5 lg:pl-20 font-bold text-lg lg:font-normal lg:text-base py-5 px-4 lg:flex-row lg:space-x-5 mt-3 w-full lg:justify-center text-white ${
-            isMobile ? 'bg-gradient-to-r from-[#180437] to-[#450B9D]' : ''
+            isMobile ? "bg-gradient-to-r from-[#180437] to-[#450B9D]" : ""
           }`}
-        >              
-
+        >
           <div
             onClick={() => {
               setIsMenuOpen(false);
@@ -101,5 +100,4 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
       </div>
     </div>
   );
-  
 }

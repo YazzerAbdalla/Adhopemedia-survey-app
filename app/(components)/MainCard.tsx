@@ -14,10 +14,7 @@ export default function MainCard({
 }: CardsProps) {
   return (
     <div className="max-w-sm flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
-      <div
-        className="w-full  max-h-72 min-h-72"
-      
-      >
+      <div className="w-full  max-h-72 min-h-72">
         <Image
           className="mx-auto"
           src={icon}
@@ -28,7 +25,7 @@ export default function MainCard({
         />
       </div>
       <div className="px-6 py-4 bg-black min-h-48 max-h-48">
-        <div className="font-bold text-md text-white mb-2 line-clamp-2">
+        <div className="font-bold text-md text-white mb-2 line-clamp-1">
           {name}
         </div>
         <p className="text-white text-sm line-clamp-1">

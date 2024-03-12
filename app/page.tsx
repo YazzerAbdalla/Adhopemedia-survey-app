@@ -10,13 +10,15 @@ const Main = () => {
   return (
     <>
       <Nav navTabs={navTabs} setNavTabs={setNavTabs} />
-      {navTabs === "home" ? (
-        <Home />
-      ) : navTabs === "activity" ? (
-        <Activity id={"1000"} userID="ker" />
-      ) : (
-        <Terms />
-      )}
+      <div className="mt-20">
+        {navTabs === "home" ? (
+          <Home />
+        ) : navTabs === "activity" ? (
+          <Activity id={"1000"} userID="ker" />
+        ) : (
+          <Terms />
+        )}
+      </div>
     </>
   );
 };
