@@ -4,6 +4,7 @@ import { CardsProps } from "@/types/cardsTypes";
 import Image from "next/image";
 
 export default function MainCard({
+  campaign_id,
   icon,
   name,
   short_description,
