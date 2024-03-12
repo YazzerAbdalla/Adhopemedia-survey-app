@@ -13,7 +13,7 @@ const Main = () => {
       {navTabs === "home" ? (
         <Home />
       ) : navTabs === "activity" ? (
-        <Activity />
+        <Activity id={"1000"} userID="ker" />
       ) : (
         <Terms />
       )}

@@ -2,7 +2,7 @@
 
 import { FaSearch } from "react-icons/fa";
 
-export default function Msearch() {
+export default function MSearchBar() {
   return (
     <div className="mx-auto max-w-[359px] min-w-[359px] max-h-[41.76px] min-h-[41.76px] block lg:hidden">
       <div className="relative mb-4 flex w-full flex-wrap items-stretch ">

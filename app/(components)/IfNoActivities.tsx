@@ -13,9 +13,7 @@ const IfNoActivities = () => {
         className="flex items-center justify-center mx-auto w-80 lg:w-96"
       />
       <Link href="/" className="">
-        <h2
-          className="flex justify-center items-center px-10 text-white mt-6"
-        >
+        <h2 className="flex justify-center items-center px-10 text-white mt-6">
           You have 0 compeleted tasks
         </h2>
       </Link>
