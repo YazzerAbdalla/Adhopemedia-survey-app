@@ -7,8 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
     Dialog as RadixDialog, 
     DialogContent,
-    DialogDescription,
-    DialogFooter,
     DialogHeader,
     DialogTrigger,
   } from "@/components/ui/dialog"
@@ -73,14 +71,14 @@ const DrawerDemo = ({
       </DialogTrigger >
 
       <RadixDialog open={isDrawerOpen && cardID === id} onClose={closeDrawer}>
-        <DrawerContent
+        <DialogContent
           className="z-[2000] text-white h-fit flex max-h-[80vh]"
           style={{
             background:
               "linear-gradient(150deg, rgb(84 1 141) 0%, rgba(89, 42, 102, 1) 99%)",
           }}
         >
-          <>
+          <DialogContent>
             <DialogHeader
               className=" "
               style={{
@@ -100,7 +98,7 @@ const DrawerDemo = ({
             <DrawerDetails cardId={cardID} />
             <DrawerLinks cardId={cardID} />
           </>
-         
+         </DialogContent>
       </RadixDialog>
     </Dialog>
   );
