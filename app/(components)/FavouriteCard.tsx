@@ -19,13 +19,13 @@ export default function FavouriteCard() {
         height={1000}
       />
       <div className="flex flex-col">
-        <h5 className=" text-[14px] lg:text-[16px] font-[600] tracking-tight text-[#1A0248] dark:text-white">
-          PKG Masters Series S2t4-Overwatch
+        <h5 className=" text-[14px] lg:text-[16px] font-[600] tracking-tight text-[#1A0248] dark:text-white line-clamp-2">
+        Poll Pay: Earn Money Rewards        
         </h5>
-        <p className="mb-1 text-[10px] lg:text-[16px] font-[600] text-gray-200 ">
-          Lorem ipsum dolor sit amet
+        <p className="mb-1 text-[10px] lg:text-[16px] font-[600] text-gray-200 line-clamp-1">
+        Join the millions of survey-takers in their quest to make money on their phones! Poll Pay is leading the way as the best cash app 2021 to earn real money rewards on your smartphone.
         </p>
-        <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
+                <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
           <Image
             className="lg:w-[18px] lg:h-[18px] w-[7px] h-[7px]"
             src={"/ios.png"}
