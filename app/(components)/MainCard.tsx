@@ -14,8 +14,8 @@ export default function MainCard({
   return (
     <div className="max-w-sm flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
       <div
-        className="w-full max-h-48 min-h-48 "
-        style={{ width: "100%", height: "100%" }}
+        className="w-full  max-h-72 min-h-72"
+      
       >
         <Image
           className="mx-auto"
@@ -26,7 +26,7 @@ export default function MainCard({
           objectFit="contain"
         />
       </div>
-      <div className="px-6 py-4 bg-black">
+      <div className="px-6 py-4 bg-black min-h-48 max-h-48">
         <div className="font-bold text-md text-white mb-2 line-clamp-2">
           {name}
         </div>
@@ -54,13 +54,13 @@ export default function MainCard({
         </div>
         <div className="flex justify-end py-4 ">
           <div
-            className="flex items-center text-[#180934] font-bold text-md  py-1 px-16"
+            className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
             style={{
               background:
                 "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
             }}
           >
-            {`${amount} Reward`}
+            {`${amount} `}
 
             <Image src={"/coinIcon.png"} alt="" width={20} height={20} />
           </div>
