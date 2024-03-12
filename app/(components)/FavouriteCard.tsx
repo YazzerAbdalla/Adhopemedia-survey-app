@@ -12,7 +12,7 @@ export default function FavouriteCard() {
       }}
     >
       <Image
-        className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px]   min-w-[70px] max-w-[70px]  min-h-[55px] max-h-[55px] py-2 px-3"
+        className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px]   min-w-[80px] max-w-[80px]  min-h-[65px] max-h-[65px] py-1 px-2"
         src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/0a/b4/6c/0ab46cd6-d503-4c89-982a-3b8cb0750279/AppIcon-0-0-1x_U007emarketing-0-0-0-5-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/512x512bb.jpg"
         alt=""
         width={1000}
@@ -39,7 +39,7 @@ export default function FavouriteCard() {
           />
         </div>
         <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
-          <button className="text-[#180934] text-[10px]  lg:text-[16px] -my-2 rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
+          <button className="text-[#180934] text-[10px]  lg:text-[16px] lg:-my-1  -my-1.5  rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
             Reward
           </button>
         </div>
