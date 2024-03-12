@@ -22,7 +22,7 @@ const IfNoActivities = () => {
         className="action  bg-purple-900 mt-4 flex justify-center w-fit"
         href="/"
       >
-        <span className="px-10 font-bold">
+        <span className="px-10 font-bold text-gray-200">
           Check our offers!
           <span className="ml-2"> →</span>
         </span>

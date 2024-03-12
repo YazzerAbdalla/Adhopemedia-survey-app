@@ -32,7 +32,7 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
   };
 
   return (
-    <div className="fixed top-0 z-[1000] flex flex-col lg:flex-row w-full py-8 lg:px-28 lg:py-4 px-0">
+    <div className="fixed bg-[#1D053B] bg-opacity-35 top-0 z-[1000] flex flex-col lg:flex-row w-full py-8 lg:px-28 lg:py-4 px-0">
       <div className="flex items-center justify-between px-4 lg:px-0">
         <h1 className="font-bold text-white text-2xl">
           {/* <Image src={"/Logo.svg"} alt="" width={20} height={20} /> */}
@@ -43,7 +43,7 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
           onClick={toggleMenu}
         >
           <BsList
-            className={`text-white transition-all duration-300 ease-in-out block h-6 w-6 ${
+            className={`text-white transition-all duration-300 ease-in-out  block h-6 w-6 ${
               isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
             }`}
           />
@@ -56,7 +56,7 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
         } lg:flex lg:items-center lg:w-auto`}
       >
         <div
-          className={`flex flex-col lg:py-0 lg:space-y-0 space-y-5 lg:pl-20 font-bold text-lg lg:font-normal lg:text-base py-5 px-4 lg:flex-row lg:space-x-5 mt-3 w-full lg:justify-center text-white ${
+          className={`flex flex-col lg:py-0 lg:space-y-0 space-y-5  lg:pl-20 font-bold text-lg lg:font-normal lg:text-base py-5 px-4 lg:flex-row lg:space-x-5 mt-3 w-full lg:justify-center text-white ${
             isMobile ? "bg-gradient-to-r from-[#180437] to-[#450B9D]" : ""
           }`}
         >
@@ -65,7 +65,7 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
               setIsMenuOpen(false);
               setNavTabs("home");
             }}
-            className={`cursor-pointer ${
+            className={`cursor-pointer hover:text-[#b064fe] ${
               navTabs === "home" && "text-[#b064fe]"
             } `}
           >
@@ -76,7 +76,7 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
               setIsMenuOpen(false);
               setNavTabs("activity");
             }}
-            className={`cursor-pointer ${
+            className={`cursor-pointer hover:text-[#b064fe] ${
               navTabs.includes("activity") && "text-[#b064fe]"
             } `}
           >
@@ -87,8 +87,8 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
               setIsMenuOpen(false);
               setNavTabs("terms-of-service");
             }}
-            className={`cursor-pointer ${
-              navTabs.includes("terms-of-service") && "text-[#b064fe]"
+            className={`cursor-pointer  hover:text-[#b064fe] ${
+              navTabs.includes("terms-of-service") && "text-[#b064fe]  "
             } `}
           >
             Terms of Service

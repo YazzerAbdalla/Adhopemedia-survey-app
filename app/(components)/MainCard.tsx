@@ -52,7 +52,7 @@ export default function MainCard({
         </div>
         <div className="flex justify-end py-4 ">
           <div
-            className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
+            className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 max-w-[201px] min-w-[201px] min-h-[39px] max-h-[39px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
             style={{
               background:
                 "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
