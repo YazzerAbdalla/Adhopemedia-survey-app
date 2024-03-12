@@ -1,24 +1,45 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { BsList } from "react-icons/bs";
+import LgSearchBar from "./LgSearchBar";
+import Image from "next/image";
+
 interface navProps {
   navTabs: string;
   setNavTabs: React.Dispatch<React.SetStateAction<string>>;
 }
 export default function Nav({ navTabs, setNavTabs }: navProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 1024);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className=" flex flex-col lg:flex-row  w-full  py-8 lg:px-28 lg:py-4 px-0 ">
+    <div className="flex flex-col lg:flex-row w-full py-8 lg:px-28 lg:py-4 px-0">
       <div className="flex items-center justify-between px-4 lg:px-0">
-        <h1 className="font-bold text-white text-2xl">LOGO</h1>
+        <h1 className="font-bold text-white text-2xl">
+        {/* <Image src={"/Logo.svg"} alt="" width={20} height={20} /> */}
+        Logo
+        </h1>
         <button
-          className="lg:hidden focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out  text-white"
+          className="lg:hidden focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
           onClick={toggleMenu}
         >
           <BsList
@@ -28,19 +49,18 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
           />
         </button>
       </div>
-
+  
       <div
         className={`lg:grow ${
           isMenuOpen ? "block" : "hidden"
         } lg:flex lg:items-center lg:w-auto`}
       >
         <div
-          className={`flex flex-col lg:py-0 lg:space-y-0 space-y-5 lg:px-0 font-bold text-lg lg:font-normal lg:text-base py-5  px-4 lg:flex-row  lg:space-x-5 mt-3 w-full lg:justify-center text-white lg:bg-transparent`}
-          style={{
-            background:
-              "linear-gradient(110.43deg, #180437 7.89%, #450B9D 89.43%)",
-          }}
-        >
+          className={`flex flex-col lg:py-0 lg:space-y-0 space-y-5 lg:pl-20 font-bold text-lg lg:font-normal lg:text-base py-5 px-4 lg:flex-row lg:space-x-5 mt-3 w-full lg:justify-center text-white ${
+            isMobile ? 'bg-gradient-to-r from-[#180437] to-[#450B9D]' : ''
+          }`}
+        >              
+
           <div
             onClick={() => {
               setIsMenuOpen(false);
@@ -76,6 +96,10 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
           </div>
         </div>
       </div>
+      <div className="flex justify-end">
+        <LgSearchBar />
+      </div>
     </div>
   );
+  
 }
