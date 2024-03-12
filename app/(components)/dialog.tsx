@@ -1,10 +1,11 @@
 import { Children, useState } from "react";
 import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
 import { Bar, BarChart, ResponsiveContainer } from "recharts";
+import { Dialog } from "@radix-ui/react-dialog";
 
 import { Button } from "@/components/ui/button";
 import {
-    Dialog,
+    Dialog as RadixDialog, 
     DialogContent,
     DialogDescription,
     DialogFooter,
@@ -71,7 +72,7 @@ const DrawerDemo = ({
         />
       </DialogTrigger >
 
-      <DialogContent open={isDrawerOpen && cardID === id} onClose={closeDrawer}>
+      <RadixDialog open={isDrawerOpen && cardID === id} onClose={closeDrawer}>
         <DrawerContent
           className="z-[2000] text-white h-fit flex max-h-[80vh]"
           style={{
@@ -99,7 +100,8 @@ const DrawerDemo = ({
             <DrawerDetails cardId={cardID} />
             <DrawerLinks cardId={cardID} />
           </>
-      </DialogContent>
+         
+      </RadixDialog>
     </Dialog>
   );
 };
