@@ -20,12 +20,16 @@ export default function FavouriteCard() {
       />
       <div className="flex flex-col">
         <h5 className=" text-[14px] lg:text-[16px] font-[600] tracking-tight text-[#1A0248] dark:text-white line-clamp-2">
-        Poll Pay: Earn Money Rewards        
+          Join the millions of survey-takers in their quest to make money on
+          their phones! Poll Pay is leading the way as the best cash app 2021 to
+          earn real money rewards on your smartphone.{" "}
         </h5>
         <p className="mb-1 text-[10px] lg:text-[16px] font-[600] text-gray-200 line-clamp-1">
-        Join the millions of survey-takers in their quest to make money on their phones! Poll Pay is leading the way as the best cash app 2021 to earn real money rewards on your smartphone.
+          Join the millions of survey-takers in their quest to make money on
+          their phones! Poll Pay is leading the way as the best cash app 2021 to
+          earn real money rewards on your smartphone.
         </p>
-                <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
+        <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
           <Image
             className="lg:w-[18px] lg:h-[18px] w-[7px] h-[7px]"
             src={"/ios.png"}
@@ -35,7 +39,7 @@ export default function FavouriteCard() {
           />
         </div>
         <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
-          <button className="text-[#180934] text-[10px] lg:text-[16px] rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
+          <button className="text-[#180934] text-[10px]  lg:text-[16px] -my-2 rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
             Reward
           </button>
         </div>
