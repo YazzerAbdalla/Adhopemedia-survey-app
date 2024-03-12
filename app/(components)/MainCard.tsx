@@ -26,7 +26,7 @@ export default function MainCard({
           objectFit="contain"
         />
       </div>
-      <div className="px-6 py-4 bg-black min-h-52 max-h-52">
+      <div className="px-6 py-4 bg-black min-h-48 max-h-48">
         <div className="font-bold text-md text-white mb-2 line-clamp-2">
           {name}
         </div>
