@@ -3,9 +3,8 @@ import { Dispatch, Fragment, SetStateAction, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
-
 export const platforms = [
-  {name: "Device Type"},
+  { name: "Device Type" },
   { name: "All" },
   { name: "iOS" },
   { name: "Android" },
@@ -30,7 +29,7 @@ interface sortProps {
   >;
 }
 
-export default function Button({
+export default function DeviceFilter({
   selectedSort,
   setSelectedSort,
   selectedPlatform,
@@ -38,16 +37,13 @@ export default function Button({
 }: sortProps) {
   return (
     <div className="flex items-center z-[10] justify-center space-x-4">
-    
-
       {/* button*/}
       <Listbox value={selectedPlatform} onChange={setSelectedPlatform}>
         <div className="relative mt-1 z-[100] min-w-[8.8rem] ">
           <Listbox.Button
             className="relative w-full cursor-default rounded-lg  text-gray-950 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
             style={{
-              background:
-                "#FFFFFF",
+              background: "#FFFFFF",
             }}
           >
             <span className="block truncate">{selectedSort.name}</span>
@@ -75,7 +71,6 @@ export default function Button({
                   }
                   value={option}
                   disabled={option.name === "Device Type"}
-
                 >
                   {({ selected }) => (
                     <>

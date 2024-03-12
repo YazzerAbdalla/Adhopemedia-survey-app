@@ -1,6 +1,6 @@
-import Image from "next/image";
 import React from "react";
 import FavouriteCard from "./FavouriteCard";
+import DeviceFilter from "./DeviceFilter";
 
 const FavouriteBox = () => {
   return (
@@ -14,14 +14,8 @@ const FavouriteBox = () => {
             PICK YOUR GAME
           </h3>
         </div>
-        <div className="font-bold mt-6 h-[26px] rounded-lg bg-white w-fit py-1 px-6">
-          <Image
-            src={"/device.svg"}
-            alt=""
-            width={1000}
-            height={1000}
-            className="w-[76px] h-[21px] lg:w-[105px]"
-          />
+        <div className="font-bold mt-6 h-[26px] rounded-lg  w-fit py-1 px-6">
+          {/* <DeviceFilter /> */}
         </div>
       </div>
       <div className="grid lg:grid-rows-2  lg:grid-cols-2  justify-center gap-8">
