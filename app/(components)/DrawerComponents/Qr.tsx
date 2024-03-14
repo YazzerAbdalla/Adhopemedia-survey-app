@@ -2,8 +2,7 @@ import React from "react";
 import QRCode from "qrcode.react";
 import { CardsProps } from "@/types/cardsTypes";
 
-
-const GenerateQRCode = ({ url }: CardsProps) => {
+const GenerateQRCode = ({ url }: { url: string }) => {
   return (
     <QRCode
       value={url}
