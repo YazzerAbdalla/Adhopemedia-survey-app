@@ -1,5 +1,5 @@
 "use client";
-import { CardsProps } from "./DataContext";
+import { CardsProps } from "@/types/cardsTypes";
 import React, {
   createContext,
   useContext,
