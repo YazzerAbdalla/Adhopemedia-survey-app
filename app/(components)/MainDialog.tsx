@@ -41,10 +41,6 @@ const MainDialog = ({
   url,
   goals,
 }: CardsProps) => {
-  const [goal, setGoal] = useState(350);
-  const { isDialogOpen, setIsDialogOpen } = useDialog();
-  const { setDialogTab } = useDialogTabs();
-  const { cardID, setCardID } = useCardContext();
   const { setDeviceType } = useDeviceType();
 
   useEffect(() => {
@@ -112,7 +108,23 @@ const MainDialog = ({
           requires_redirection={false}
           campaign_os_target={campaign_os_target}
         />
-        <DialogLinks cardId={cardID} campaign_id={campaign_id} />
+        <DialogLinks
+          campaign_id={campaign_id}
+          icon={icon}
+          name={name}
+          url={url}
+          instructions={"Complete Offers to Earn Coins"}
+          instructions_array={[]}
+          description={description}
+          short_description={short_description}
+          goals={goals}
+          payout={""}
+          amount={amount}
+          is_multi_reward={false}
+          is_market_research={false}
+          requires_redirection={false}
+          campaign_os_target={campaign_os_target}
+        />
       </DialogContent>
     </Dialog>
   );
