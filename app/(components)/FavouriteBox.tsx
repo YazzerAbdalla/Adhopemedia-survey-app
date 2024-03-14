@@ -19,10 +19,7 @@ const FavouriteBox = () => {
         </div>
       </div>
       <div className="grid lg:grid-rows-2  lg:grid-cols-2  justify-center gap-8">
-        <FavouriteCard />
-        <FavouriteCard />
-        <FavouriteCard />
-        <FavouriteCard />
+        {/* <FavouriteCard /> */}
       </div>
     </div>
   );
