@@ -13,7 +13,7 @@ const DialogNewHeader = ({
 }: CardsProps) => {
   return (
     <div className="w-full p-6 h-fit">
-      <div className="flex items-center rounded-md gap-1 relative w-full bg-[#280A46] lg:max-w-[500px] lg:min-w-[480px] max-w-[313px]  min-w-[313px]   lg:max-h-[144px] lg:min-h-[144px] p-2">
+      <div className="flex items-center rounded-md gap-1 relative w-full bg-[#280A46] lg:max-w-[500px] lg:min-w-[480px] max-w-[313px]  min-w-[313px] min-h-[100px] max-h-[100px] lg:max-h-[144px] lg:min-h-[144px]  ">
         <Image
           className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px] rounded-[20px] min-w-[80px] max-w-[80px]  min-h-[65px] max-h-[65px] py-1 px-2"
           src={icon}
@@ -30,7 +30,7 @@ const DialogNewHeader = ({
           </p>
           <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
             {campaign_os_target == "All" ? (
-              <h1 className="text-white">All</h1>
+              <h1 className="text-white text-md">All</h1>
             ) : (
               <Image
                 src={
