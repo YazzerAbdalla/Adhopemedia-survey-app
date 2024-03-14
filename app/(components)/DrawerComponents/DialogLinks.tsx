@@ -2,20 +2,12 @@ import { useDataContext } from "@/contexts/DataContext";
 import React from "react";
 import GenerateQRCode from "./Qr";
 import { useDialogTabs } from "@/contexts/DialogTabs";
+import { CardsProps } from "@/types/cardsTypes";
 
-interface DrawerLinksProps {
-  cardId: string;
-    campaign_id: string; 
-}
-const DrawerLinks = ({ cardId }: DrawerLinksProps) => {
+const DrawerLinks = ({ campaign_os_target, url }: CardsProps) => {
   const { dialogTab } = useDialogTabs();
-  const { dataArr } = useDataContext();
 
-  // Use explicit type for the id parameter
-  const selectedCard = dataArr.find(({ campaign_id }: { campaign_id: string }) => campaign_id === campaign_id);
-
-  // Show links content only when drawerTab is "links" and selectedCard is available
-  const showLinks = dialogTab === "links" && selectedCard;
+  const showLinks = dialogTab === "links";
 
   return (
     <>
@@ -23,16 +15,16 @@ const DrawerLinks = ({ cardId }: DrawerLinksProps) => {
         <div className="new-offer-popup__content gap-4 z-[1000] p-4 w-full overflow-y-scroll ">
           <div className="new-offer-popup__links">
             <div className="qrcode-wrapper">
-              <div id="qrcode" title={selectedCard?.url}>
-                <GenerateQRCode url={selectedCard?.url} />
+              <div id="qrcode" title={url}>
+                <GenerateQRCode url={url} />
               </div>
               <div className="text-content">
                 <span className="title">QR code</span>
                 <p className="text-white">
                   Scan the generated image code with your{" "}
-                  {selectedCard?.campaign_os_target === "android"
+                  {campaign_os_target === "android"
                     ? "Android"
-                    : selectedCard?.campaign_os_target === "ios"
+                    : campaign_os_target === "ios"
                     ? "iOS"
                     : "Desktop"}{" "}
                   device
