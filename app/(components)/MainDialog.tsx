@@ -19,6 +19,7 @@ import DialogTabs from "./DrawerComponents/DialogTabs";
 import { Button } from "@/components/ui/button";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
 import DialogDetails from "./DrawerComponents/DialogDetails";
+import DialogLinks from "./DrawerComponents/DialogLinks";
 
 interface dataProps {
   name: string;
@@ -111,6 +112,8 @@ const MainDialog = ({
           requires_redirection={false}
           campaign_os_target={campaign_os_target}
         />
+   <DialogLinks cardId={cardID} campaign_id={campaign_id} />
+
       </DialogContent>
     </Dialog>
   );

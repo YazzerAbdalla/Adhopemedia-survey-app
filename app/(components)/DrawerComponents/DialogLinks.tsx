@@ -4,15 +4,15 @@ import GenerateQRCode from "./Qr";
 import { useDialogTabs } from "@/contexts/DialogTabs";
 
 interface DrawerLinksProps {
-  cardId: number;
+  cardId: string;
+    campaign_id: string; 
 }
-
 const DrawerLinks = ({ cardId }: DrawerLinksProps) => {
   const { dialogTab } = useDialogTabs();
   const { dataArr } = useDataContext();
 
   // Use explicit type for the id parameter
-  const selectedCard = dataArr.find(({ id }: { id: number }) => cardId === id);
+  const selectedCard = dataArr.find(({ campaign_id }: { campaign_id: string }) => campaign_id === campaign_id);
 
   // Show links content only when drawerTab is "links" and selectedCard is available
   const showLinks = dialogTab === "links" && selectedCard;
@@ -28,11 +28,11 @@ const DrawerLinks = ({ cardId }: DrawerLinksProps) => {
               </div>
               <div className="text-content">
                 <span className="title">QR code</span>
-                <p className="text">
+                <p className="text-white">
                   Scan the generated image code with your{" "}
-                  {selectedCard?.os === "android"
+                  {selectedCard?.campaign_os_target === "android"
                     ? "Android"
-                    : selectedCard?.os === "ios"
+                    : selectedCard?.campaign_os_target === "ios"
                     ? "iOS"
                     : "Desktop"}{" "}
                   device
