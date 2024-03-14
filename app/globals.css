@@ -848,16 +848,16 @@ header nav ul li a {
   border-radius: 15px; /* Optional: add border-radius to the image */
 }
 /* perkox-loader.css */
-.body1{
+.body1 {
   margin: 0;
   padding: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: black; /* Set the background color to black */
-  z-index: 1000; /* Ensure the preloader is on top */
+  min-height: 100vh; /* Use 100vh for full viewport height */
+  background-color: #220837;
+  background-size:auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
+
 
 .preloader-container {
   position: fixed;
@@ -869,7 +869,7 @@ header nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black; /* Semi-transparent black background */
+  background-image: url(/bgpage.png); /* Set the background image */
 }
 
 .btn {
@@ -879,7 +879,7 @@ header nav ul li a {
   width: 13rem;
   overflow: hidden;
   height: 13rem; /* Make the button a circle */
-  background-size: 300% 300%;
+  background-size: 400% 400%;
   backdrop-filter: blur(1rem);
   border-radius: 50%; /* Make it a circle */
   transition: 0.5s;
