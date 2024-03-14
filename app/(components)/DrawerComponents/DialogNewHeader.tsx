@@ -13,7 +13,7 @@ const DialogNewHeader = ({
 }: CardsProps) => {
   return (
     <div className="w-full p-6 h-fit">
-      <div className="flex items-center rounded-md gap-1 relative w-full bg-[#280A46] lg:max-h-[144px] lg:min-h-[144px] p-2">
+      <div className="flex items-center rounded-md gap-1 relative w-full bg-[#280A46] lg:max-w-[500px] lg:min-w-[480px] max-w-[313px]  min-w-[313px]   lg:max-h-[144px] lg:min-h-[144px] p-2">
         <Image
           className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px] rounded-[20px] min-w-[80px] max-w-[80px]  min-h-[65px] max-h-[65px] py-1 px-2"
           src={icon}
@@ -41,21 +41,21 @@ const DialogNewHeader = ({
                     : "ios-icon.svg"
                 }
                 alt="icon"
-                width={20}
-                height={20}
+                width={15}
+                height={15}
               ></Image>
             )}
           </div>
           <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
             <div
-              className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 max-w-[201px] min-w-[201px] min-h-[39px] max-h-[39px] rounded-[5px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
+              className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 max-w-[100px] min-w-[100px] min-h-[20px] max-h-[20px] rounded-[5px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
               style={{
                 background:
                   "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
               }}
             >
               {amount}
-              <Image src={"/coinIcon.png"} alt="" width={20} height={20} />
+              <Image src={"/coinIcon.png"} alt="" width={10} height={10} />
             </div>
           </div>
         </div>

@@ -75,7 +75,7 @@ const MainDialog = ({
       </DialogTrigger>
       <DialogContent
         style={{ backgroundImage: 'url("/bgpage.png")' }}
-        className="flex flex-col gap-0 max-w-[600px]  min-w-[600px] border-2 border-[#280A46]  min-h-[450px] max-h-[500px] "
+        className="flex flex-col  gap-0 max-w-[354px] min-w-[354px] lg:max-w-[531px]  lg:min-w-[531px] border-2 border-[#280A46] min-h-[533] max-h-[533px]  lg:min-h-[533px] lg:max-h-[533px] "
       >
         <DialogNewHeader
           campaign_id={campaign_id}
@@ -112,8 +112,7 @@ const MainDialog = ({
           requires_redirection={false}
           campaign_os_target={campaign_os_target}
         />
-   <DialogLinks cardId={cardID} campaign_id={campaign_id} />
-
+        <DialogLinks cardId={cardID} campaign_id={campaign_id} />
       </DialogContent>
     </Dialog>
   );
