@@ -1,8 +1,12 @@
-import dynamic from 'next/dynamic';
+"use client";
+import dynamic from "next/dynamic";
 
-const DynamicFaSearch = dynamic(() => import('react-icons/fa').then((mod) => mod.FaSearch), {
-  ssr: false,
-});
+const DynamicFaSearch = dynamic(
+  () => import("react-icons/fa").then((mod) => mod.FaSearch),
+  {
+    ssr: false,
+  }
+);
 
 export default function MSearchBar() {
   return (

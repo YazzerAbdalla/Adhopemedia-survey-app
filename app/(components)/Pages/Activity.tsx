@@ -15,8 +15,9 @@ interface Activities {
 interface HomeProps {
   id: string;
   userID: string;
+  setNavTabs: React.Dispatch<React.SetStateAction<string>>;
 }
-const Activity = ({ id, userID }: HomeProps) => {
+const Activity = ({ id, userID, setNavTabs }: HomeProps) => {
   const [activities, setActivities] = useState<Activities[] | null>();
   const [loading, setLoading] = useState(true);
 
@@ -54,7 +55,7 @@ const Activity = ({ id, userID }: HomeProps) => {
             </div>
           ) : (
             <div className="flex items-center w-full  justify-center">
-              <IfNoActivities />
+              <IfNoActivities setNavTabs={setNavTabs} />
             </div>
           )}
         </section>
