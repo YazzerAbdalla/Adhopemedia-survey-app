@@ -6,18 +6,18 @@ import { CardsProps } from "@/types/cardsTypes";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
 
 const FavouriteBox = () => {
-  const [fav, setFav] = useState<CardsProps[] | []>([]);
+  const [fav, setFav] = useState<CardsProps[]>([]);
   const { deviceType, setDeviceType } = useDeviceType();
 
   const { dataArr } = useDataContext();
 
   useEffect(() => {
-    let theFavCards: CardsProps[] = dataArr.filter(
-      (item) => item.favourite === 1
-    );
-    setFav(theFavCards);
+    // let theFavCards: CardsProps[] = dataArr.filter(
+    //   (item) => item.favourite === 1
+    // );
+    // setFav(theFavCards);
   }, [dataArr]);
-  if (fav.length > 0) {
+  if (fav.length > 0 ) {
     return (
       <div className="w-full flex justify-center">
         <div className=" shadow-lg rounded-xl p-6 lg:p-12 bg-[#1A004A80] ">
@@ -51,6 +51,7 @@ const FavouriteBox = () => {
                   campaign_os_target,
                 }) => (
                   <FavouriteCard
+                    url=""
                     key={campaign_id}
                     amount={amount}
                     campaign_id={campaign_id}

@@ -51,6 +51,7 @@ const MainDialog = ({
       <DialogTrigger asChild>
         <div className="cursor-pointer">
           <MainCard
+            url=""
             amount={amount}
             campaign_id={campaign_id}
             campaign_os_target={campaign_os_target}
@@ -66,6 +67,7 @@ const MainDialog = ({
         className="flex flex-col  gap-0 max-w-[354px] min-w-[354px] lg:max-w-[531.99px]  lg:min-w-[534px] border-2 border-[#280A46] min-h-[533] max-h-[533px]  lg:min-h-[533px] lg:max-h-[533px] "
       >
         <DialogNewHeader
+          url=""
           amount={amount}
           campaign_id={campaign_id}
           campaign_os_target={campaign_os_target}
@@ -76,6 +78,7 @@ const MainDialog = ({
         />
         <DialogTabs />
         <DialogDetails
+          url=""
           amount={amount}
           campaign_id={campaign_id}
           campaign_os_target={campaign_os_target}

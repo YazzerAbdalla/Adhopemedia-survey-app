@@ -1,10 +1,9 @@
 import React from "react";
 import QRCode from "qrcode.react";
-interface codeProps {
-  url: string;
-}
+import { CardsProps } from "@/types/cardsTypes";
 
-const GenerateQRCode = ({ url }: codeProps) => {
+
+const GenerateQRCode = ({ url }: CardsProps) => {
   return (
     <QRCode
       value={url}

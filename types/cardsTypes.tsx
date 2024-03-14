@@ -6,7 +6,7 @@ export interface CardsProps {
   short_description: string;
   amount: number;
   campaign_os_target: string;
-  url?: string;
+  url: string;
   instructions?: string;
   instructions_array?: string[];
   goals?: string;
