@@ -1,7 +1,5 @@
 "use client";
 
-import { useCardContext } from "@/contexts/CardContext";
-import { useDialog } from "@/contexts/DialogContext";
 import { CardsProps } from "@/types/cardsTypes";
 import Image from "next/image";
 

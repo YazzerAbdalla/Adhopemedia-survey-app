@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NameOfSite from "../NameOfSite";
-import MainCard from "../MainCard";
 import FavouriteBox from "../FavouriteBox";
 import MSearchBar from "../MSearchBar";
 import MainDialog from "../MainDialog";

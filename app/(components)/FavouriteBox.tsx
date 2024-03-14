@@ -1,8 +1,11 @@
 import React from "react";
 import FavouriteCard from "./FavouriteCard";
 import DeviceFilter from "./DeviceFilter";
+import { useDataContext } from "@/contexts/DataContext";
 
 const FavouriteBox = () => {
+  const { dataArr } = useDataContext();
+
   return (
     <div className=" shadow-lg rounded-xl p-6 lg:p-12 bg-[#1A004A80] ">
       <div className="flex mb-3 flex-row gap-6 justify-between ">
