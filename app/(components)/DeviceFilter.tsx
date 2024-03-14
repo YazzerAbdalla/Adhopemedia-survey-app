@@ -1,42 +1,19 @@
-"use client";
-import { Dispatch, Fragment, SetStateAction, useState } from "react";
+import { Dispatch, Fragment, SetStateAction } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
-export const platforms = [
-  { name: "Device Type" },
-  { name: "All" },
-  { name: "iOS" },
-  { name: "Android" },
-  { name: "Web" },
-];
+export const platforms = ["Device Type", "All", "iOS", "Android"];
 interface sortProps {
-  selectedSort: {
-    name: string;
-  };
-  selectedPlatform: {
-    name: string;
-  };
-  setSelectedSort: Dispatch<
-    SetStateAction<{
-      name: string;
-    }>
-  >;
-  setSelectedPlatform: Dispatch<
-    SetStateAction<{
-      name: string;
-    }>
-  >;
+  selectedPlatform: string;
+  setSelectedPlatform: Dispatch<SetStateAction<string>>;
 }
 
 export default function DeviceFilter({
-  selectedSort,
-  setSelectedSort,
   selectedPlatform,
   setSelectedPlatform,
 }: sortProps) {
   return (
-    <div className="flex items-center z-[10] justify-center space-x-4">
+    <div className="flex items-center mt-3 justify-center rounded-lg space-x-4">
       {/* button*/}
       <Listbox value={selectedPlatform} onChange={setSelectedPlatform}>
         <div className="relative mt-1 z-[100] min-w-[8.8rem] ">
@@ -46,7 +23,9 @@ export default function DeviceFilter({
               background: "#FFFFFF",
             }}
           >
-            <span className="block truncate">{selectedSort.name}</span>
+            <span className="block truncate">
+              {selectedPlatform || "Device Type"}
+            </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon
                 className="h-5 w-5 text-black"
@@ -70,7 +49,7 @@ export default function DeviceFilter({
                     }`
                   }
                   value={option}
-                  disabled={option.name === "Device Type"}
+                  disabled={option === "Device Type"}
                 >
                   {({ selected }) => (
                     <>
@@ -79,7 +58,7 @@ export default function DeviceFilter({
                           selected ? "font-medium" : "font-normal"
                         }`}
                       >
-                        {option.name}
+                        {option}
                       </span>
                       {selected ? (
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-purple-900 font-solid">

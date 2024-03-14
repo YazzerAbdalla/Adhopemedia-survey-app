@@ -9,7 +9,7 @@ const DialogTabs = () => {
   return (
     <div
       className={`"flex flex-row flex-nowrap ${
-        deviceType === "All" ? "justify-center" : "justify-between"
+        deviceType !== "All" ? "justify-between" : "justify-center"
       } px-4 items-center w-full bg-[#1F0349] text-white`}
     >
       <div className="flex flex-col justify-center items-center">

@@ -3,9 +3,11 @@ import FavouriteCard from "./FavouriteCard";
 import DeviceFilter from "./DeviceFilter";
 import { useDataContext } from "@/contexts/DataContext";
 import { CardsProps } from "@/types/cardsTypes";
+import { useDeviceType } from "@/contexts/DeviceTypeContext";
 
 const FavouriteBox = () => {
   const [fav, setFav] = useState<CardsProps[] | []>([]);
+  const { deviceType, setDeviceType } = useDeviceType();
 
   const { dataArr } = useDataContext();
 
@@ -15,7 +17,6 @@ const FavouriteBox = () => {
     );
     setFav(theFavCards);
   }, [dataArr]);
-  console.log("🚀 ~ FavouriteBox ~ fav:", fav);
   if (fav.length > 0) {
     return (
       <div className="w-full flex justify-center">
@@ -30,7 +31,10 @@ const FavouriteBox = () => {
               </h3>
             </div>
             <div className="font-bold mt-6 h-[26px] rounded-lg  w-fit py-1 px-6">
-              {/* <DeviceFilter /> */}
+              <DeviceFilter
+                selectedPlatform={deviceType}
+                setSelectedPlatform={setDeviceType}
+              />
             </div>
           </div>
           <div className="grid lg:grid-rows-2  lg:grid-cols-2  justify-center gap-8">
@@ -60,6 +64,15 @@ const FavouriteBox = () => {
               )}
           </div>
         </div>
+      </div>
+    );
+  } else {
+    return (
+      <div className="mt-12">
+        <DeviceFilter
+          selectedPlatform={deviceType}
+          setSelectedPlatform={setDeviceType}
+        />
       </div>
     );
   }
