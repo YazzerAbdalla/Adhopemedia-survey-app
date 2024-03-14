@@ -18,6 +18,7 @@ import { CardsProps } from "@/types/cardsTypes";
 import DialogTabs from "./DrawerComponents/DialogTabs";
 import { Button } from "@/components/ui/button";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
+import DialogDetails from "./DrawerComponents/DialogDetails";
 
 interface dataProps {
   name: string;
@@ -36,6 +37,8 @@ const MainDialog = ({
   description,
   amount,
   campaign_os_target,
+  url,
+  goals,
 }: CardsProps) => {
   const [goal, setGoal] = useState(350);
   const { isDialogOpen, setIsDialogOpen } = useDialog();
@@ -43,17 +46,6 @@ const MainDialog = ({
   const { cardID, setCardID } = useCardContext();
   const { setDeviceType } = useDeviceType();
 
-  function handleClick() {
-    setIsDialogOpen(true);
-    setCardID(campaign_id);
-  }
-
-  // Function to close the Dialog
-  const closeDialog = () => {
-    setIsDialogOpen(false);
-    setDialogTab("details");
-    setCardID("");
-  };
   useEffect(() => {
     setDeviceType(campaign_os_target);
   }, []);
@@ -68,7 +60,6 @@ const MainDialog = ({
             description={description}
             icon={icon}
             short_description={short_description}
-            handleClick={handleClick}
             name={name}
             url={""}
             instructions={""}
@@ -83,7 +74,7 @@ const MainDialog = ({
       </DialogTrigger>
       <DialogContent
         style={{ backgroundImage: 'url("/bgpage.png")' }}
-        className="flex flex-col  min-w-[600px] border-2 border-[#280A46]  min-h-[450px] "
+        className="flex flex-col gap-0 max-w-[600px]  min-w-[600px] border-2 border-[#280A46]  min-h-[450px] max-h-[500px] "
       >
         <DialogNewHeader
           campaign_id={campaign_id}
@@ -103,6 +94,23 @@ const MainDialog = ({
           campaign_os_target={campaign_os_target}
         />
         <DialogTabs />
+        <DialogDetails
+          campaign_id={campaign_id}
+          icon={icon}
+          name={name}
+          url={""}
+          instructions={"Complete Offers to Earn Coins"}
+          instructions_array={[]}
+          description={description}
+          short_description={short_description}
+          goals={goals}
+          payout={""}
+          amount={amount}
+          is_multi_reward={false}
+          is_market_research={false}
+          requires_redirection={false}
+          campaign_os_target={campaign_os_target}
+        />
       </DialogContent>
     </Dialog>
   );

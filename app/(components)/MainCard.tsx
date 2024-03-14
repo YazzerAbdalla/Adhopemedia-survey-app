@@ -12,13 +12,9 @@ export default function MainCard({
   description,
   amount,
   campaign_os_target,
-  handleClick,
-}: CardsProps & { handleClick: () => void }) {
+}: CardsProps) {
   return (
-    <div
-      onClick={handleClick}
-      className="max-w-sm cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] "
-    >
+    <div className="max-w-sm cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
       <div className="w-full  max-h-72 min-h-72">
         <Image
           className="mx-auto"

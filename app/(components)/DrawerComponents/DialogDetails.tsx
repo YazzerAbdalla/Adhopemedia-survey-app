@@ -1,44 +1,34 @@
 /* eslint-disable @next/next/no-img-element */
 import { useDataContext } from "@/contexts/DataContext";
 import { useDialogTabs } from "@/contexts/DialogTabs";
+import { CardsProps } from "@/types/cardsTypes";
 import React from "react";
 
-interface DialogHeaderProps {
-  cardId: string;
-}
-
-const DialogDetails = ({ cardId }: DialogHeaderProps) => {
+const DialogDetails = ({
+  campaign_id,
+  icon,
+  name,
+  short_description,
+  description,
+  amount,
+  campaign_os_target,
+  url,
+  goals,
+}: CardsProps) => {
   const { dialogTab } = useDialogTabs();
-  const { dataArr } = useDataContext();
   const hrStyle: React.CSSProperties = { borderColor: "black" };
-
-  // Use find instead of filter to get a single selected card
-  const selectedCard = dataArr.find(
-    ({ campaign_id }) => cardId === campaign_id
-  );
-
-  // Check if selectedCard is not defined
-  if (!selectedCard) {
-    return null;
-  }
 
   let showDetail = dialogTab === "details";
 
   return (
     <>
       {showDetail && (
-        <div className="z-[1000] w-full gap-4 new-offer-popup__text-content overflow-y-scroll flex  left-4 ">
+        <div className="w-full overflow-scroll new-offer-popup__text-content overflow-y-scroll flex ">
           <div className="flex flex-col w-[50%] gap-1 offer-instructoins">
             <div className="offer-description  text-wrap">
               <span className="title">Offer description :</span>
-              <h1 className="text-gray-300 font-bold text-sm ">
-                {" "}
-                {selectedCard.name} :{" "}
-              </h1>
-              <p className="description">
-                {" "}
-                {selectedCard.description && selectedCard.description}
-              </p>
+              <h1 className="text-gray-300 font-bold text-sm "> {name} : </h1>
+              <p className="description"> {description && description}</p>
               <span className="title">
                 To enjoy our offerwall, please remember:
               </span>
@@ -93,15 +83,19 @@ const DialogDetails = ({ cardId }: DialogHeaderProps) => {
                 </ol>
                 <br />{" "}
                 <a
-                  href={selectedCard?.url}
+                  href={url}
                   className="gaming-button flex text-center item-center mx-30 justify-center"
+                  style={{
+                    background:
+                      "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
+                  }}
                 >
-                  Earn +{selectedCard?.amount} points
+                  Earn +{amount} points
                 </a>
               </p>
             </div>
           </div>
-          {selectedCard.goals && (
+          {goals && (
             <div className="new-offer-popup__steps-wrapper w-[50%]">
               <span className="title">All steps</span>
               <span className="horizontal-line"></span>

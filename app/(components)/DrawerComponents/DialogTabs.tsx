@@ -7,7 +7,11 @@ const DialogTabs = () => {
   const { deviceType } = useDeviceType();
 
   return (
-    <div className="flex justify-center gap-6 items-center w-full bg-[#1F0349] text-white">
+    <div
+      className={`"flex flex-row flex-nowrap ${
+        deviceType !== "All" ? "justify-center" : "justify-between"
+      } px-16 items-center w-full bg-[#1F0349] text-white`}
+    >
       <div className="flex flex-col justify-center items-center">
         <div
           onClick={() => setDialogTab("details")}
@@ -22,7 +26,7 @@ const DialogTabs = () => {
         ></div>
       </div>
 
-      {deviceType === "All" && (
+      {deviceType !== "All" && (
         <div className="flex flex-col justify-center items-center">
           <div
             onClick={() => setDialogTab("links")}
