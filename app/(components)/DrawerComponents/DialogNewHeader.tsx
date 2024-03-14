@@ -55,7 +55,7 @@ const DialogNewHeader = ({
               }}
             >
               {amount}
-              <Image src={"/coinIcon.png"} alt="" width={10} height={10} />
+              <Image src={"/coinIcon.png"} alt="" width={18} height={18} />
             </div>
           </div>
         </div>
