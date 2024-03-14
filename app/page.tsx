@@ -14,7 +14,7 @@ const Main = () => {
         {navTabs === "home" ? (
           <Home />
         ) : navTabs === "activity" ? (
-          <Activity id={"1000"} userID="ker" />
+          <Activity id={"1000"} setNavTabs={setNavTabs} userID="ker" />
         ) : (
           <Terms />
         )}

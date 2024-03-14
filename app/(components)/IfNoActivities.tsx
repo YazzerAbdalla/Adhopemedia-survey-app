@@ -2,7 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const IfNoActivities = () => {
+const IfNoActivities = ({
+  setNavTabs,
+}: {
+  setNavTabs: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   return (
     <div className="pt-10 mt-7 xl:pt-20 items-center flex flex-col justify-center">
       <Image
@@ -18,15 +22,17 @@ const IfNoActivities = () => {
         </h2>
       </Link>
 
-      <Link
+      <div
+        onClick={() => {
+          setNavTabs("home");
+        }}
         className="action  bg-purple-900 mt-4 flex justify-center w-fit"
-        href="/"
       >
         <span className="px-10 font-bold text-gray-200">
           Check our offers!
           <span className="ml-2"> →</span>
         </span>
-      </Link>
+      </div>
     </div>
   );
 };
