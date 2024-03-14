@@ -10,7 +10,7 @@ const DialogTabs = () => {
     <div
       className={`"flex flex-row flex-nowrap ${
         deviceType === "All" ? "justify-center" : "justify-between"
-      } px-16 items-center w-full bg-[#1F0349] text-white`}
+      } px-4 items-center w-full bg-[#1F0349] text-white`}
     >
       <div className="flex flex-col justify-center items-center">
         <div
@@ -30,7 +30,7 @@ const DialogTabs = () => {
         <div className="flex flex-col justify-center items-center">
           <div
             onClick={() => setDialogTab("links")}
-            className={`flex items-center text-lg px-3 py-2 cursor-pointer rounded `}
+            className={`flex items-center text-nowrap text-lg px-3 py-2 cursor-pointer rounded `}
           >
             Get link options
           </div>
