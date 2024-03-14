@@ -32,7 +32,7 @@ export default function FavouriteCard() {
         <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
           <Image
             className="lg:w-[18px] lg:h-[18px] w-[7px] h-[7px]"
-            src={"/ios.png"}
+            src={"/ios-icon.svg"}
             alt=""
             width={1000}
             height={1000}
