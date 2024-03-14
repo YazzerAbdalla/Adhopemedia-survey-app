@@ -1,19 +1,24 @@
 "use client";
 
+import { useCardContext } from "@/contexts/CardContext";
+import { useDialog } from "@/contexts/DialogContext";
 import { CardsProps } from "@/types/cardsTypes";
 import Image from "next/image";
 
 export default function MainCard({
-  campaign_id,
   icon,
   name,
   short_description,
   description,
   amount,
   campaign_os_target,
-}: CardsProps) {
+  handleClick,
+}: CardsProps & { handleClick: () => void }) {
   return (
-    <div className="max-w-sm flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
+    <div
+      onClick={handleClick}
+      className="max-w-sm cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] "
+    >
       <div className="w-full  max-h-72 min-h-72">
         <Image
           className="mx-auto"

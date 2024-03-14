@@ -1,5 +1,5 @@
 "use client";
-import { Offer } from "./DataContext";
+import { CardsProps } from "./DataContext";
 import React, {
   createContext,
   useContext,
@@ -10,8 +10,8 @@ import React, {
 } from "react";
 
 interface FilteredDataContextProps {
-  filteredDataArr: Offer[];
-  setFilteredDataArr: Dispatch<SetStateAction<Offer[]>>;
+  filteredDataArr: CardsProps[];
+  setFilteredDataArr: Dispatch<SetStateAction<CardsProps[]>>;
 }
 
 const FilteredDataContext = createContext<FilteredDataContextProps | undefined>(
@@ -21,7 +21,7 @@ const FilteredDataContext = createContext<FilteredDataContextProps | undefined>(
 export const FilteredDataProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [filteredDataArr, setFilteredDataArr] = useState<Offer[]>([]);
+  const [filteredDataArr, setFilteredDataArr] = useState<CardsProps[]>([]);
 
   return (
     <FilteredDataContext.Provider

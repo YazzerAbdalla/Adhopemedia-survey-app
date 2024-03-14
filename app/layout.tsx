@@ -2,6 +2,14 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ErrorContextProvider } from "@/contexts/ErrorContext";
+import { DataProvider } from "@/contexts/DataContext";
+import { DialogProvider } from "@/contexts/DialogContext";
+import { DeviceTypeProvider } from "@/contexts/DeviceTypeContext";
+import { FilteredDataProvider } from "@/contexts/FilteredDataContext";
+import { CardProvider } from "@/contexts/CardContext";
+import { FilterProvider } from "@/contexts/FilterContext";
+import { DeviceProvider } from "@/contexts/DeviceContext";
+import { DialogTabsProvider } from "@/contexts/DialogTabs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +26,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ErrorContextProvider>{children}</ErrorContextProvider>
+        <DeviceTypeProvider>
+          <FilteredDataProvider>
+            <ErrorContextProvider>
+              <DataProvider>
+                <CardProvider>
+                  <FilterProvider>
+                    <DeviceProvider>
+                      <DialogTabsProvider>
+                        <DialogProvider>{children}</DialogProvider>
+                      </DialogTabsProvider>
+                    </DeviceProvider>
+                  </FilterProvider>
+                </CardProvider>
+              </DataProvider>
+            </ErrorContextProvider>
+          </FilteredDataProvider>
+        </DeviceTypeProvider>
       </body>
     </html>
   );

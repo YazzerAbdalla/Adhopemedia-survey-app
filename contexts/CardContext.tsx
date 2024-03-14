@@ -2,8 +2,8 @@
 import React, { ReactNode, createContext, useContext, useState } from "react";
 
 interface CardContextProps {
-  cardID: number;
-  setCardID: React.Dispatch<React.SetStateAction<number>>;
+  cardID: string;
+  setCardID: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const CardContext = createContext<CardContextProps | undefined>(undefined);
@@ -13,7 +13,7 @@ interface DeviceProviderProps {
 }
 
 export const CardProvider: React.FC<DeviceProviderProps> = ({ children }) => {
-  const [cardID, setCardID] = useState<number>(0);
+  const [cardID, setCardID] = useState("");
 
   return (
     <CardContext.Provider value={{ cardID, setCardID }}>

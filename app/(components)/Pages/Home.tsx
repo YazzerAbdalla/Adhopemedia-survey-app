@@ -6,15 +6,17 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { CardsProps } from "@/types/cardsTypes";
 import { useErrorContext } from "@/contexts/ErrorContext";
+import { useDataContext } from "@/contexts/DataContext";
+import MainDialog from "../MainDialog";
 
 export default function Home() {
-  const [cards, setCards] = useState<CardsProps[]>();
+  const { dataArr, setDataArr } = useDataContext();
   const { error, setError } = useErrorContext();
   useEffect(() => {
     const data = axios
       .get("https://adhopemedia.com/api/GetOffers/10000/ker00sama")
       .then((res) =>
-        res.data.error ? setError(res.data.error) : setCards(res.data.offers)
+        res.data.error ? setError(res.data.error) : setDataArr(res.data.offers)
       )
       .catch((e) =>
         setError({
@@ -31,7 +33,7 @@ export default function Home() {
       </div>
       <div className="flex w-full justify-center px-8 lg:px-24 mt-12">
         <div className="grid justify-center lg:grid-cols-3 gap-6">
-          {cards?.map(
+          {dataArr?.map(
             ({
               icon,
               name,
@@ -41,7 +43,7 @@ export default function Home() {
               campaign_os_target,
               campaign_id,
             }) => (
-              <MainCard
+              <MainDialog
                 key={campaign_id}
                 icon={icon}
                 name={name}

@@ -1,26 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
 import { useDataContext } from "@/contexts/DataContext";
-import { useDrawerTabs } from "@/contexts/DrawerTabs";
+import { useDialogTabs } from "@/contexts/DialogTabs";
 import React from "react";
 
-interface DrawerHeaderProps {
-  cardId: number;
+interface DialogHeaderProps {
+  cardId: string;
 }
 
-const DrawerDetails = ({ cardId }: DrawerHeaderProps) => {
-  const { drawerTab } = useDrawerTabs();
+const DialogDetails = ({ cardId }: DialogHeaderProps) => {
+  const { dialogTab } = useDialogTabs();
   const { dataArr } = useDataContext();
   const hrStyle: React.CSSProperties = { borderColor: "black" };
 
   // Use find instead of filter to get a single selected card
-  const selectedCard = dataArr.find(({ id }) => cardId === id);
+  const selectedCard = dataArr.find(
+    ({ campaign_id }) => cardId === campaign_id
+  );
 
   // Check if selectedCard is not defined
   if (!selectedCard) {
     return null;
   }
 
-  let showDetail = drawerTab === "details";
+  let showDetail = dialogTab === "details";
 
   return (
     <>
@@ -94,7 +96,7 @@ const DrawerDetails = ({ cardId }: DrawerHeaderProps) => {
                   href={selectedCard?.url}
                   className="gaming-button flex text-center item-center mx-30 justify-center"
                 >
-                  Earn +{selectedCard?.reward} points
+                  Earn +{selectedCard?.amount} points
                 </a>
               </p>
             </div>
@@ -182,4 +184,4 @@ const DrawerDetails = ({ cardId }: DrawerHeaderProps) => {
   );
 };
 
-export default DrawerDetails;
+export default DialogDetails;

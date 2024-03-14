@@ -1,21 +1,21 @@
 import { useDataContext } from "@/contexts/DataContext";
 import React from "react";
 import GenerateQRCode from "./Qr";
-import { useDrawerTabs } from "@/contexts/DrawerTabs";
+import { useDialogTabs } from "@/contexts/DialogTabs";
 
 interface DrawerLinksProps {
   cardId: number;
 }
 
 const DrawerLinks = ({ cardId }: DrawerLinksProps) => {
-  const { drawerTab } = useDrawerTabs();
+  const { dialogTab } = useDialogTabs();
   const { dataArr } = useDataContext();
 
   // Use explicit type for the id parameter
   const selectedCard = dataArr.find(({ id }: { id: number }) => cardId === id);
 
   // Show links content only when drawerTab is "links" and selectedCard is available
-  const showLinks = drawerTab === "links" && selectedCard;
+  const showLinks = dialogTab === "links" && selectedCard;
 
   return (
     <>

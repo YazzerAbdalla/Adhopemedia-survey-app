@@ -1,4 +1,5 @@
 "use client";
+import { CardsProps } from "@/types/cardsTypes";
 import React, {
   createContext,
   useContext,
@@ -8,29 +9,9 @@ import React, {
   SetStateAction,
 } from "react";
 
-export interface Offer {
-  id: number;
-  offer_type: string;
-  name: string;
-  model: string;
-  instructions: string;
-  description: string;
-  short_description: string;
-  disclaimer: string;
-  image: string;
-  goals: string[];
-  os: string;
-  incent: string;
-  url: string;
-  reward: number;
-  payout?: undefined;
-  countries?: undefined;
-  favorite: number;
-}
-
 interface DataContextProps {
-  dataArr: Offer[];
-  setDataArr: Dispatch<SetStateAction<Offer[]>>;
+  dataArr: CardsProps[];
+  setDataArr: Dispatch<SetStateAction<CardsProps[]>>;
 }
 
 const DataContext = createContext<DataContextProps | undefined>(undefined);
@@ -38,7 +19,7 @@ const DataContext = createContext<DataContextProps | undefined>(undefined);
 export const DataProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [dataArr, setDataArr] = useState<Offer[]>([]);
+  const [dataArr, setDataArr] = useState<CardsProps[]>([]);
 
   return (
     <DataContext.Provider value={{ dataArr, setDataArr }}>
