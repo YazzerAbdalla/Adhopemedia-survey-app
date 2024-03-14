@@ -1,26 +1,28 @@
 "use client";
+import dynamic from "next/dynamic";
 
-import { FaSearch } from "react-icons/fa";
+const DynamicFaSearch = dynamic(
+  () => import("react-icons/fa").then((mod) => mod.FaSearch),
+  {
+    ssr: false,
+  }
+);
 
-export default function LgSearchBar() {
+export default function MSearchBar() {
   return (
-    <div className="mx-auto max-w-[160px] min-w-[160px] max-h-[39px] min-h-[39px] hidden lg:block">
-      <div className="relative mb-0 flex w-full flex-wrap items-stretch ">
-        <span className="z-10 h-full leading-snug font-normal absolute text-center text-[#B064FE] bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3">
-          <FaSearch />
-        </span>
-        <input
-          type="text"
-          className="relative m-0 block w-full rounded-xl border-2 border-solid border-neutral-300 bg-white bg-clip-padding px-10 py-[0.25rem] text-base font-normal leading-[1.6] text-gray-950 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_#B064FE] focus:outline-none"
-          placeholder="Search"
-          aria-label="Search"
-          aria-describedby="button-addon3 "
-        />
-        <button
-          type="button"
-          className="absolute inset-y-0 end-0 flex items-center pe-3"
-        ></button>
-      </div>
+
+<form className=" mx-auto max-w-[160px] min-w-[160px] max-h-[15px] min-h-[15px] hidden lg:block">   
+    <label htmlFor="default-search" className="mb-0  text-sm font-medium text-gray-900 sr-only ">Search</label>
+    <div className="relative z-1000">
+        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+            <svg className="w-4 h-4 text-[#B064FE] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+            </svg>
+        </div>
+        <input type="search" id="default-search" className="block w-full p-4 ps-10 text-sm text-gray-900 border-2 border-[#B064FE] rounded-3xl bg-gray-50 focus:ring-[#B064FE] focus:border-[#B064FE] " placeholder="Search Title..." required />
     </div>
+</form>
+
+
   );
 }
