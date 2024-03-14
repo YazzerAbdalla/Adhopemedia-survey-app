@@ -59,6 +59,7 @@ export default function Home() {
                   campaign_id,
                 }) => (
                   <MainDialog
+                    url=""
                     key={campaign_id}
                     icon={icon}
                     name={name}
