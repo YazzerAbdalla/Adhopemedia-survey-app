@@ -58,14 +58,6 @@ const MainDialog = ({
             icon={icon}
             short_description={short_description}
             name={name}
-            url={""}
-            instructions={""}
-            instructions_array={[]}
-            goals={""}
-            payout={""}
-            is_multi_reward={false}
-            is_market_research={false}
-            requires_redirection={false}
           />
         </div>
       </DialogTrigger>
@@ -74,55 +66,33 @@ const MainDialog = ({
         className="flex flex-col  gap-0 max-w-[354px] min-w-[354px] lg:max-w-[531.99px]  lg:min-w-[534px] border-2 border-[#280A46] min-h-[533] max-h-[533px]  lg:min-h-[533px] lg:max-h-[533px] "
       >
         <DialogNewHeader
-          campaign_id={campaign_id}
-          icon={icon}
-          name={name}
-          url={""}
-          instructions={"Complete Offers to Earn Coins"}
-          instructions_array={[]}
-          description={description}
-          short_description={short_description}
-          goals={""}
-          payout={""}
           amount={amount}
-          is_multi_reward={false}
-          is_market_research={false}
-          requires_redirection={false}
+          campaign_id={campaign_id}
           campaign_os_target={campaign_os_target}
+          description={description}
+          icon={icon}
+          short_description={short_description}
+          name={name}
         />
         <DialogTabs />
         <DialogDetails
-          campaign_id={campaign_id}
-          icon={icon}
-          name={name}
-          url={""}
-          instructions={"Complete Offers to Earn Coins"}
-          instructions_array={[]}
-          description={description}
-          short_description={short_description}
-          goals={goals}
-          payout={""}
           amount={amount}
-          is_multi_reward={false}
-          is_market_research={false}
-          requires_redirection={false}
+          campaign_id={campaign_id}
           campaign_os_target={campaign_os_target}
+          description={description}
+          icon={icon}
+          short_description={short_description}
+          name={name}
         />
         <DialogLinks
           campaign_id={campaign_id}
           icon={icon}
           name={name}
           url={url}
-          instructions={"Complete Offers to Earn Coins"}
-          instructions_array={[]}
           description={description}
           short_description={short_description}
           goals={goals}
-          payout={""}
           amount={amount}
-          is_multi_reward={false}
-          is_market_research={false}
-          requires_redirection={false}
           campaign_os_target={campaign_os_target}
         />
       </DialogContent>

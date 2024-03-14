@@ -853,11 +853,10 @@ header nav ul li a {
   padding: 0;
   min-height: 100vh; /* Use 100vh for full viewport height */
   background-color: #220837;
-  background-size:auto;
-  background-repeat: repeat;
+  background-size: auto;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
 
 .preloader-container {
   position: fixed;
@@ -885,7 +884,14 @@ header nav ul li a {
   transition: 0.5s;
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
-  background-image: linear-gradient(#212121, #212121), linear-gradient(137.48deg, #ffdb3b 10%, #FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-image: linear-gradient(#212121, #212121),
+    linear-gradient(
+      137.48deg,
+      #ffdb3b 10%,
+      #fe53bb 45%,
+      #8f51ea 67%,
+      #0044ff 87%
+    );
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -903,10 +909,10 @@ header nav ul li a {
 
 .strong1 {
   z-index: 2;
-  font-family: 'Avalors Personal Use';
+  font-family: "Avalors Personal Use";
   font-size: 12px;
   letter-spacing: 5px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 0 0 4px white;
 }
 
@@ -934,14 +940,14 @@ header nav ul li a {
 }
 
 .btn:active {
-  border: double 4px #FE53BB;
+  border: double 4px #fe53bb;
   background-origin: border-box;
   background-clip: content-box, border-box;
   animation: none;
 }
 
 .btn:active .circle {
-  background: #FE53BB;
+  background: #fe53bb;
 }
 
 #stars {
@@ -1032,7 +1038,6 @@ header nav ul li a {
     box-shadow: 0 0 0 20px rgba(0, 0, 0, 0); /* Make the shadow disappear */
   }
 }
-
 
 /* end preloading */
 .gaming-button {
@@ -1149,7 +1154,7 @@ header nav ul li a {
     transform: rotate(360deg);
   }
 }
-.offer-rewardDrawer{
+.offer-rewardDrawer {
   position: relative;
   display: flex;
   align-items: center;
