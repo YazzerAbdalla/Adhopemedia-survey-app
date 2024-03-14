@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import NameOfSite from "../NameOfSite";
 import FavouriteBox from "../FavouriteBox";
+import CardError from "../cardError";
 import MSearchBar from "../MSearchBar";
 import MainDialog from "../MainDialog";
 import PerkoxLoader from "../PerkoxLoader";
@@ -12,10 +13,11 @@ export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
   const { error, setError } = useErrorContext();
   const [loading, setLoading] = useState(true);
+  console.log("🚀 ~ Home ~ error:", error);
 
   useEffect(() => {
     axios
-      .get("https://adhopemedia.com/api/GetOffers/10000/ker00sama")
+      .get("https://adhopemedia.com/api/GetOffer/10000/ker00sama")
       .then((res) => {
         if (res.data.error) {
           setError(res.data.error);
@@ -36,6 +38,9 @@ export default function Home() {
     <>
       {loading ? (
         <PerkoxLoader />
+      ) : error ? ( // Corrected conditional rendering here
+        //@ts-ignore
+        <CardError error={error.message} />
       ) : (
         <>
           <NameOfSite />
@@ -62,14 +67,6 @@ export default function Home() {
                     amount={amount}
                     campaign_os_target={campaign_os_target}
                     campaign_id={campaign_id}
-                    url={""}
-                    instructions={""}
-                    instructions_array={[]}
-                    goals={""}
-                    payout={""}
-                    is_multi_reward={false}
-                    is_market_research={false}
-                    requires_redirection={false}
                   />
                 )
               )}
