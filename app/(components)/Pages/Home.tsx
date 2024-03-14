@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://adhopemedia.com/api/GetOffer/10000/ker00sama")
+      .get("https://adhopemedia.com/api/GetOffers/10000/ker00sama")
       .then((res) => {
         if (res.data.error) {
           setError(res.data.error);
