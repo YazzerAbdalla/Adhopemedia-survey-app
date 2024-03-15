@@ -7,6 +7,7 @@ import MainDialog from "../MainDialog";
 import PerkoxLoader from "../PerkoxLoader";
 import { useErrorContext } from "@/contexts/ErrorContext";
 import { useDataContext } from "@/contexts/DataContext";
+import NameOfSite from "../NameOfSite";
 
 export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
@@ -42,6 +43,7 @@ export default function Home() {
         <CardError error={error.message} />
       ) : (
         <>
+          <NameOfSite />
           <MSearchBar />
           <FavouriteBox />
           <div className="flex w-full justify-center px-8 lg:px-24 mt-12">
