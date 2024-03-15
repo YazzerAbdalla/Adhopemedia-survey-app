@@ -32,13 +32,10 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
   };
 
   return (
-    <div className="fixed bg-[#1D053B] bg-opacity-55 top-0 z-[1000] flex flex-col lg:flex-row w-full py-8 lg:px-28 lg:py-4 px-0">
+    <div className="fixed bg-[#1D053B] bg-opacity-55 top-0 z-[1000] flex flex-col lg:flex-row w-full py-7 lg:px-28 lg:py-4 px-0">
       <div className="flex items-center justify-between px-4 lg:px-0">
-        <h1 className="font-bold text-white text-2xl">
-          {/* <Image src={"/Logo.svg"} alt="" width={20} height={20} /> */}
-          Logo
-        </h1>
-        <button
+          <Image src={"/kero1.svg"} alt="" width={70} height={0} /> 
+                 <button
           className="lg:hidden focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
           onClick={toggleMenu}
         >

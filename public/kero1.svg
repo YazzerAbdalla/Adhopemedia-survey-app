@@ -1,0 +1,59 @@
+
+<svg    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 211.49 135.98">
+  <defs>
+    <style>.cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-4);
+      }
+
+      .cls-5 {
+        fill: url(#linear-gradient-5);
+      }</style>
+    <linearGradient id="linear-gradient" x1="50.17" y1="25.97" x2="172.86" y2="154.68" gradientUnits="userSpaceOnUse">
+      <stop offset="0.19" stop-color="#ff567a"/>
+      <stop offset="0.28" stop-color="#fa547b"/>
+      <stop offset="0.39" stop-color="#eb4f7c"/>
+      <stop offset="0.51" stop-color="#d3467f"/>
+      <stop offset="0.64" stop-color="#b13984"/>
+      <stop offset="0.77" stop-color="#852989"/>
+      <stop offset="0.9" stop-color="#501690"/>
+      <stop offset="1" stop-color="#250695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="114.33" y1="108.09" x2="184.67" y2="169.13"
+                    gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff567a"/>
+      <stop offset="1" stop-color="#250695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="28.35" y1="57.92" x2="122.92" y2="111.55" gradientUnits="userSpaceOnUse">
+      <stop offset="0.06" stop-color="#ff567a"/>
+      <stop offset="1" stop-color="#250695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="35.05" y1="94.44" x2="131.65" y2="96.27" gradientUnits="userSpaceOnUse">
+      <stop offset="0.29" stop-color="#ff567a"/>
+      <stop offset="1" stop-color="#250695"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="134.68" y1="112.31" x2="67.79" y2="-12.75"
+                    xlink:href="#linear-gradient-2"/>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="OBJECT">
+      <path class="cls-1"
+            d="M157.2,0H106.45L119,26.55h37.37a27.7,27.7,0,0,1,27.7,27.7h0A27.7,27.7,0,0,1,156.35,82h-25.7L92.23,0H63.76L0,136H28.06L78,29.49,102.59,82h-35l-12.5,26.64H157.2A54.29,54.29,0,0,0,211.49,54.3h0A54.3,54.3,0,0,0,157.2,0Z"/>
+      <polygon class="cls-2" points="121.72 122.75 127.92 135.98 155.99 135.98 149.78 122.75 121.72 122.75"/>
+      <polygon class="cls-3" points="92.23 0 28.06 135.98 0 135.98 63.76 0 92.23 0"/>
+      <polygon class="cls-4" points="102.59 81.95 115.08 108.59 55.13 108.59 67.63 81.95 102.59 81.95"/>
+      <polygon class="cls-5" points="92.23 0 77.99 29.49 115.08 108.59 143.14 108.59 92.23 0"/>
+    </g>
+  </g>
+</svg>
