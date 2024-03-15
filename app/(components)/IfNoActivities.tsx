@@ -8,17 +8,17 @@ const IfNoActivities = ({
   setNavTabs: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   return (
-    <div className="pt-10 mt-7 xl:pt-20 items-center flex flex-col justify-center">
+    <div className="pt-10 mt-7 xl:pt-20 items-center flex flex-col justify-center ">
       <Image
-        src="/Asset_1.svg"
+        src="/ifnocard.jpg"
         alt="hero image"
         width={1025}
         height={500}
-        className="flex items-center justify-center mx-auto w-80 lg:w-96"
+        className="flex items-center justify-center mx-auto w-80 lg:w-80 rounded-3xl "
       />
       <Link href="/" className="">
         <h2 className="flex justify-center items-center px-10 text-white mt-6">
-          You have 0 compeleted tasks
+          You have 0 completed  tasks
         </h2>
       </Link>
 
