@@ -13,17 +13,17 @@ export default function MainCard({
 }: CardsProps) {
   return (
     <div className="max-w-sm cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
-      <div className="w-full  max-h-72 min-h-72">
+      <div className="w-full  max-h-[200px] min-h-[200px]">
         <Image
-          className="mx-auto"
+          className="mx-auto max-h-[210px] min-h-[210px] "
           src={icon}
           alt="Sunset in the mountains"
-          width={1000}
-          height={1000}
+          width={300}
+          height={50}
           objectFit="contain"
         />
       </div>
-      <div className="px-6 py-4 bg-black min-h-48 max-h-48">
+      <div className="px-6 py-4 bg-black rounded-t-3xl  max-w-[300px] min-w-[184px] min-h-[184px] max-h-[184px]">
         <div className="font-bold text-md text-white mb-2 line-clamp-1">
           {name}
         </div>
@@ -33,7 +33,10 @@ export default function MainCard({
         </p>
         <div className="w-fit mt-4 border-[rgba(255,255,255,0.5)] rad border-[1px] rounded-3xl  py-1 px-16 ">
           {campaign_os_target == "All" ? (
-            <h1 className="text-white">All</h1>
+            <h1 className="text-white">
+              {" "}
+              <Image src={"/desktop.svg"} alt="" width={20} height={20} />
+            </h1>
           ) : (
             <Image
               src={
@@ -51,7 +54,7 @@ export default function MainCard({
         </div>
         <div className="flex justify-end py-4 ">
           <div
-            className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 max-w-[201px] min-w-[201px] min-h-[39px] max-h-[39px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
+            className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
             style={{
               background:
                 "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",

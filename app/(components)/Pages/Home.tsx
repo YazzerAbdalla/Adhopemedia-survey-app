@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import NameOfSite from "../NameOfSite";
 import FavouriteBox from "../FavouriteBox";
 import CardError from "../cardError";
 import MSearchBar from "../MSearchBar";
@@ -43,7 +42,6 @@ export default function Home() {
         <CardError error={error.message} />
       ) : (
         <>
-          <NameOfSite />
           <MSearchBar />
           <FavouriteBox />
           <div className="flex w-full justify-center px-8 lg:px-24 mt-12">
