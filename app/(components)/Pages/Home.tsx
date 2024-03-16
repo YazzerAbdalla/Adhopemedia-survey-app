@@ -8,9 +8,11 @@ import PerkoxLoader from "../PerkoxLoader";
 import { useErrorContext } from "@/contexts/ErrorContext";
 import { useDataContext } from "@/contexts/DataContext";
 import NameOfSite from "../NameOfSite";
+import { useSortContext } from "@/contexts/SortContext";
 
 export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
+  const { setSortArr } = useSortContext();
   const { error, setError } = useErrorContext();
   const [loading, setLoading] = useState(true);
 
@@ -22,6 +24,7 @@ export default function Home() {
           setError(res.data.error);
         } else {
           setDataArr(res.data.offers);
+          setSortArr(res.data.offers);
         }
         setLoading(false);
       })

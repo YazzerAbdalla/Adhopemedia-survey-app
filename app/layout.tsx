@@ -7,7 +7,7 @@ import { DialogProvider } from "@/contexts/DialogContext";
 import { DeviceTypeProvider } from "@/contexts/DeviceTypeContext";
 import { FilteredDataProvider } from "@/contexts/FilteredDataContext";
 import { CardProvider } from "@/contexts/CardContext";
-import { FilterProvider } from "@/contexts/FilterContext";
+import { SortProvider } from "@/contexts/SortContext";
 import { DeviceProvider } from "@/contexts/DeviceContext";
 import { DialogTabsProvider } from "@/contexts/DialogTabs";
 
@@ -31,13 +31,13 @@ export default function RootLayout({
             <ErrorContextProvider>
               <DataProvider>
                 <CardProvider>
-                  <FilterProvider>
+                  <SortProvider>
                     <DeviceProvider>
                       <DialogTabsProvider>
                         <DialogProvider>{children}</DialogProvider>
                       </DialogTabsProvider>
                     </DeviceProvider>
-                  </FilterProvider>
+                  </SortProvider>
                 </CardProvider>
               </DataProvider>
             </ErrorContextProvider>

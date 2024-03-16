@@ -1,10 +1,10 @@
-export interface FavProps{
+export interface FavProps {
   campaign_id: string;
   icon: string;
   name: string;
   description: string;
   short_description: string;
-  amount: number;
+  amount: string;
   campaign_os_target: string;
   url?: string;
   instructions?: string;

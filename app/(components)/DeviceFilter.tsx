@@ -13,10 +13,10 @@ export default function DeviceFilter({
   setSelectedPlatform,
 }: sortProps) {
   return (
-    <div className="flex items-center mt-3 justify-center rounded-lg space-x-4">
+    <div className="flex items-center mt-3  justify-center rounded-lg space-x-4">
       {/* button*/}
       <Listbox value={selectedPlatform} onChange={setSelectedPlatform}>
-        <div className="relative mt-1 z-[100] min-w-[8.8rem] ">
+        <div className="relative mt-1 z-[1000] min-w-[8.8rem] ">
           <Listbox.Button
             className="relative w-full cursor-default rounded-lg  text-gray-950 py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-white/75 focus-visible:ring-offset-2 focus-visible:ring-offset-orange-300 sm:text-sm"
             style={{

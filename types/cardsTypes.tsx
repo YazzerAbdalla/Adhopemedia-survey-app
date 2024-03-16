@@ -4,7 +4,7 @@ export interface CardsProps {
   name: string;
   description: string;
   short_description: string;
-  amount: number;
+  amount: string ;
   campaign_os_target: string;
   url: string;
   instructions?: string;
