@@ -4,11 +4,11 @@ import FavouriteBox from "../FavouriteBox";
 import CardError from "../cardError";
 import MSearchBar from "../MSearchBar";
 import MainDialog from "../MainDialog";
-import PerkoxLoader from "../PerkoxLoader";
 import { useErrorContext } from "@/contexts/ErrorContext";
 import { useDataContext } from "@/contexts/DataContext";
 import NameOfSite from "../NameOfSite";
 import { useSortContext } from "@/contexts/SortContext";
+import AdhopeLoader from "../AdhopeLoader";
 
 export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <>
       {loading ? (
-        <PerkoxLoader />
+        <AdhopeLoader    />
       ) : error ? ( // Corrected conditional rendering here
         //@ts-ignore
         <CardError error={error.message} />

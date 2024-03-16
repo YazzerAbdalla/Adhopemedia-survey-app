@@ -24,7 +24,7 @@ const FavouriteBox = () => {
   }, [dataArr]);
 
   return (
-    <div className="w-full flex justify-center py-12 lg:py-0">
+    <div className="w-full flex justify-center px-3 py-12 lg:py-0">
       <div className=" shadow-lg rounded-xl p-6 lg:p-12 bg-[#1A004A80] ">
         <div className="flex mb-3 flex-row gap-6 justify-between ">
           <div>
