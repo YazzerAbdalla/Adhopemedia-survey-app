@@ -1,20 +1,22 @@
-"use client"
+"use client";
 
 const PerkoxLoader = () => {
   return (
-    <div className="preloader-container"> 
-    <div className="btn" >
-      <strong className="text-gray-50 text-xl">Adhopemedia</strong>
-      <div id="container-stars">
-        <div id="stars"></div>
-      </div>
-
-      <div id="glow">
-        <div className="circle"></div>
-        <div className="circle"></div>
+    <div className="preloader-container">
+  <div className="spinner-container">
+  <div className="spinner">
+   <div className="spinner">
+    <div className="spinner">
+      <div className="spinner">
+        <div className="spinner">
+            <div className="spinner"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
+    </div>
   );
 };
 
