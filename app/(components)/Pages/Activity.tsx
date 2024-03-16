@@ -39,18 +39,16 @@ const Activity = ({ id, userID, setNavTabs }: HomeProps) => {
           </div>
         </div>
       ) : (
-        <section className="mt-14">
-            {activities ? (
-         <div className="grid grid-cols-1 lg:grid-cols-2 px-8 lg:px-24  py-8 justify-center gap-5">
-         {activities.map(({ id, offername, status, image }) => (
-                <>
-                  <ActivitiesCard
-                    key={id}
-                    offername={offername}
-                    status={status}
-                    image={image}
-                  />
-                </>
+        <section className="flex justify-center w-full p-8">
+          {activities ? (
+            <div className="grid w-full p-12 gap-y-5 lg:grid-cols-2 justify-center items-center">
+              {activities?.map(({ id, offername, status, image }) => (
+                <ActivitiesCard
+                  key={id} // Use a unique key for each card, here we use the index of the item
+                  offername={offername} // Pass offername from the activity object
+                  status={status} // Pass status from the activity object
+                  image={image} // Pass image URL from the activity object
+                />
               ))}
             </div>
           ) : (
