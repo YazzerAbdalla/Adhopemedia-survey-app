@@ -21,6 +21,7 @@ export default function MainCard({
           width={300}
           height={50}
           objectFit="contain"
+          typeof="lazy"
         />
       </div>
       <div className="px-6 py-4 bg-black rounded-t-3xl  max-w-[300px] min-w-[184px] min-h-[184px] max-h-[184px]">
