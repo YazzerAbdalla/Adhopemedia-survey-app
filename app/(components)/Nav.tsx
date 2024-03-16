@@ -35,7 +35,7 @@ export default function Nav({ navTabs, setNavTabs }: NavProps) {
     <div className="fixed bg-[#1D053B] bg-opacity-55 top-0 z-[1000] flex flex-col lg:flex-row w-full py-7 lg:px-28 lg:py-4 px-0">
       {/* Logo section */}
       <div className="flex items-center lg:justify-between justify-center lg:px-0">
-        <Link href="/" className="">
+        <div className=" cursor-pointer">
           <Image
             src={"/kero1.svg"}
             alt=""
@@ -45,7 +45,7 @@ export default function Nav({ navTabs, setNavTabs }: NavProps) {
               setNavTabs("home");
             }}
           />
-        </Link>
+        </div>
       </div>
       <div className="flex justify-end">
         {isMobile && (
