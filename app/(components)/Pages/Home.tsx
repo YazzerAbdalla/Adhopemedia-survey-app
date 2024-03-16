@@ -13,7 +13,6 @@ export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
   const { error, setError } = useErrorContext();
   const [loading, setLoading] = useState(true);
-  console.log("🚀 ~ Home ~ error:", error);
 
   useEffect(() => {
     axios
