@@ -6,13 +6,13 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import DialogNewHeader from "./DrawerComponents/DialogNewHeader";
+import DialogNewHeader from "./DialogComponents/DialogNewHeader";
 import MainCard from "./MainCard";
 import { CardsProps } from "@/types/cardsTypes";
-import DialogTabs from "./DrawerComponents/DialogTabs";
+import DialogTabs from "./DialogComponents/DialogTabs";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
-import DialogDetails from "./DrawerComponents/DialogDetails";
-import DialogLinks from "./DrawerComponents/DialogLinks";
+import DialogDetails from "./DialogComponents/DialogDetails";
+import DialogLinks from "./DialogComponents/DialogLinks";
 import MoMainCard from "./MoMainCard";
 
 const MainDialog = ({
