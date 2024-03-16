@@ -1,8 +1,8 @@
 import React from "react";
-import PerkoxLoader from "@/app/(components)/AdhopeLoader";
+import AdhopeLoader from "@/app/(components)/AdhopeLoader";
 
 const loading = () => {
-  return <PerkoxLoader />;
+  return <AdhopeLoader />;
 };
 
 export default loading;
