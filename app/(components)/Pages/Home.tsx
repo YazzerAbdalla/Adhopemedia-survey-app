@@ -19,6 +19,7 @@ import PriceSortMenu from "../PriceSortMenu";
 import { useSelectedSortTypeContext } from "@/contexts/SelectedSortTypeContext";
 import { highSort } from "@/app/(Fun)/HighSort";
 import { lowSort } from "@/app/(Fun)/LowSort";
+import { CardsProps } from "@/types/cardsTypes";
 
 export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
@@ -26,20 +27,13 @@ export default function Home() {
   const { setSortArr } = useSortContext();
   const { filterKind, setFilterKind } = useFilteredObjContext();
   const { error, setError } = useErrorContext();
-  const [loading, setLoading] = useState(true);
   const { searchFilter } = useSearchFilterContext();
+  const [loading, setLoading] = useState(true);
   const { selectedSortType, setSelectedSortType } =
     useSelectedSortTypeContext();
+  const [sortedData, setSortedData] = useState<CardsProps[]>([]);
 
-  let SortDataByKindDevice = DeviceTypeSort(dataArr, filterKind);
-  SortDataByKindDevice = searchFilterFunction(dataArr, searchFilter);
-  if (selectedSortType === "High Price") {
-    SortDataByKindDevice = highSort(dataArr);
-  } else if (selectedSortType === "Lower Price") {
-    SortDataByKindDevice = lowSort(dataArr);
-  } else if (selectedSortType === "Default") {
-    SortDataByKindDevice = dataArr;
-  }
+  let SortDataByKindDevice: CardsProps[];
 
   useEffect(() => {
     axios
@@ -62,6 +56,22 @@ export default function Home() {
         setLoading(false);
       });
   }, []);
+  // Other useEffect to handle the states changes
+  useEffect(() => {
+    SortDataByKindDevice = DeviceTypeSort(dataArr, filterKind);
+    SortDataByKindDevice = searchFilterFunction(
+      SortDataByKindDevice,
+      searchFilter
+    );
+
+    if (selectedSortType === "High Price") {
+      SortDataByKindDevice = highSort(SortDataByKindDevice);
+    } else if (selectedSortType === "Lower Price") {
+      SortDataByKindDevice = lowSort(SortDataByKindDevice);
+    } // No need to handle "Default" case as it remains unsorted
+
+    setSortedData(SortDataByKindDevice);
+  }, [dataArr, filterKind, searchFilter, selectedSortType]); // Dependencies for useEffect
 
   return (
     <div style={{ overflowX: "hidden" }}>
@@ -79,7 +89,7 @@ export default function Home() {
             selectedSortType={selectedSortType}
             setSelectedSortType={setSelectedSortType}
           />
-          {SortDataByKindDevice.length === 0 ? (
+          {sortedData.length === 0 ? (
             // Render IfNoActivities component if SortDataByKindDevice is empty
             <div className="flex justify-center">
               <IfNoActivities setNavTabs={null} />
@@ -88,7 +98,7 @@ export default function Home() {
             // Otherwise, map over SortDataByKindDevice and render MainDialog for each item
             <div className="flex w-full justify-center px-8 lg:px-24 mt-12">
               <div className="grid justify-center -space-x-1 -mx-6 grid-cols-2 lg:grid-cols-3 gap-6">
-                {SortDataByKindDevice.map(
+                {sortedData.map(
                   ({
                     icon,
                     name,
