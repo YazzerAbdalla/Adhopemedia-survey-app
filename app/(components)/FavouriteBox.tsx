@@ -3,9 +3,8 @@ import DeviceFilter from "./DeviceFilter";
 import { useDataContext } from "@/contexts/DataContext";
 import { FavProps } from "@/types/FavProps";
 import { highSort } from "../(Fun)/HighSort";
-import { useSortContext } from "@/contexts/SortContext";
 import { useFilteredObjContext } from "@/contexts/FilterKindContext";
-import Favourite from "./favouriteDialog";
+import FavouriteDialog from "./favouriteDialog";
 
 const FavouriteBox = () => {
   const [fav, setFav] = useState<FavProps[]>([]);
@@ -52,17 +51,18 @@ const FavouriteBox = () => {
                 amount,
                 campaign_os_target,
               }) => (
-                <Favourite
-                  url=""
-                  key={campaign_id}
-                  amount={amount}
-                  campaign_id={campaign_id}
-                  campaign_os_target={campaign_os_target}
-                  description={description}
-                  icon={icon}
-                  short_description={short_description}
-                  name={name}
-                />
+                <div key={campaign_id} className="z-0">
+                  <FavouriteDialog
+                    url=""
+                    amount={amount}
+                    campaign_id={campaign_id}
+                    campaign_os_target={campaign_os_target}
+                    description={description}
+                    icon={icon}
+                    short_description={short_description}
+                    name={name}
+                  />
+                </div>
               )
             )}
         </div>
