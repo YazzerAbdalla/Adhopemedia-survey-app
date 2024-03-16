@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BsList } from "react-icons/bs";
 import LgSearchBar from "./LgSearchBar";
 import Image from "next/image";
+import Link from "next/link";
 
 interface navProps {
   navTabs: string;
@@ -35,7 +36,12 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
     <div className="fixed bg-[#1D053B] bg-opacity-55 top-0 z-[1000] flex flex-col lg:flex-row w-full py-7 lg:px-28 lg:py-4 px-0">
       {/* Logo section */}
       <div className="flex items-center lg:justify-between justify-center lg:px-0">
-        <Image src={"/kero1.svg"} alt="" width={70} height={0}  /> 
+      <Link href="/" className="">
+        <Image src={"/kero1.svg"} alt="" width={70} height={0}  
+         onClick={() => {
+          setNavTabs("home");
+        }}/> 
+        </Link>
       </div>
 
       {/* Navigation section */}
