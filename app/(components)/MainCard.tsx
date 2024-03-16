@@ -12,7 +12,7 @@ export default function MainCard({
   campaign_os_target,
 }: CardsProps) {
   return (
-    <div className="max-w-sm cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
+    <div className="max-w-sm  hidden lg:block cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
       <div className="w-full  max-h-[200px] min-h-[200px]">
         <Image
           className="mx-auto max-h-[210px] min-h-[210px] "
