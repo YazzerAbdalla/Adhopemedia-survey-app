@@ -5,13 +5,8 @@ import axios from "axios";
 import IfNoActivities from "../IfNoActivities";
 //import PerkoxLoader from "../PerkoxLoader";
 import Navbar from "../Nav";
+import { Activities } from "@/types/ActivitiesProps";
 
-interface Activities {
-  id: number;
-  offername: string;
-  status: string;
-  image: string;
-}
 interface HomeProps {
   id: string;
   userID: string;
