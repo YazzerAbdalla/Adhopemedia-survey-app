@@ -2,22 +2,22 @@ import React, { useEffect, useState } from "react";
 import FavouriteCard from "./FavouriteCard";
 import DeviceFilter from "./DeviceFilter";
 import { useDataContext } from "@/contexts/DataContext";
-import { CardsProps } from "@/types/cardsTypes";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
+import { FavProps } from "@/types/FavProps";
 
 const FavouriteBox = () => {
-  const [fav, setFav] = useState<CardsProps[]>([]);
+  const [fav, setFav] = useState<FavProps[]>([]);
   const { deviceType, setDeviceType } = useDeviceType();
 
   const { dataArr } = useDataContext();
 
   useEffect(() => {
-    // let theFavCards: CardsProps[] = dataArr.filter(
-    //   (item) => item.favourite === 1
-    // );
-    // setFav(theFavCards);
+    let theFavCards: FavProps[] = dataArr.filter(
+      (item) => item.favourite === 1
+    );
+    setFav(theFavCards);
   }, [dataArr]);
-  if (fav.length > 0 ) {
+  if (fav.length > 0) {
     return (
       <div className="w-full flex justify-center">
         <div className=" shadow-lg rounded-xl p-6 lg:p-12 bg-[#1A004A80] ">
