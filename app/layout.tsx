@@ -8,6 +8,7 @@ import { FilteredDataProvider } from "@/contexts/FilterKindContext";
 import { SortProvider } from "@/contexts/SortContext";
 import { DialogTabsProvider } from "@/contexts/DialogTabs";
 import { SearchFilterProvider } from "@/contexts/SearchFilterContext";
+import { SelectedSortTypeProvider } from "@/contexts/SelectedSortTypeContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,13 +31,15 @@ export default function RootLayout({
         <DeviceTypeProvider>
           <FilteredDataProvider>
             <SearchFilterProvider>
-              <ErrorContextProvider>
-                <DataProvider>
-                  <SortProvider>
-                    <DialogTabsProvider>{children}</DialogTabsProvider>
-                  </SortProvider>
-                </DataProvider>
-              </ErrorContextProvider>
+              <SelectedSortTypeProvider>
+                <ErrorContextProvider>
+                  <DataProvider>
+                    <SortProvider>
+                      <DialogTabsProvider>{children}</DialogTabsProvider>
+                    </SortProvider>
+                  </DataProvider>
+                </ErrorContextProvider>
+              </SelectedSortTypeProvider>
             </SearchFilterProvider>
           </FilteredDataProvider>
         </DeviceTypeProvider>
