@@ -6,6 +6,7 @@ import { useDeviceType } from "@/contexts/DeviceTypeContext";
 import { FavProps } from "@/types/FavProps";
 import { highSort } from "../(Fun)/HighSort";
 import { useSortContext } from "@/contexts/SortContext";
+import Favourite from "./favouriteDialog";
 
 const FavouriteBox = () => {
   const [fav, setFav] = useState<FavProps[]>([]);
@@ -54,7 +55,7 @@ const FavouriteBox = () => {
                 amount,
                 campaign_os_target,
               }) => (
-                <FavouriteCard
+                <Favourite
                   url=""
                   key={campaign_id}
                   amount={amount}
