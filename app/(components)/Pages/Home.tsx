@@ -21,7 +21,11 @@ import { highSort } from "@/app/(Fun)/HighSort";
 import { lowSort } from "@/app/(Fun)/LowSort";
 import { CardsProps } from "@/types/cardsTypes";
 
-export default function Home() {
+interface HomeProps {
+  id: string;
+  userID: string;
+}
+export default function Home({ id, userID }: HomeProps) {
   const { dataArr, setDataArr } = useDataContext();
   const { setDeviceType } = useDeviceType();
   const { setSortArr } = useSortContext();
@@ -37,7 +41,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("https://adhopemedia.com/api/GetOffers/10000/ker00sama")
+      .get(`https://adhopemedia.com/api/GetOffers/${id}/${userID}`)
       .then((res) => {
         if (res.data.error) {
           setError(res.data.error);
