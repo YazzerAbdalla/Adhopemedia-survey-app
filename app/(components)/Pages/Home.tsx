@@ -37,10 +37,10 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div style={{ overflowX: "hidden" }}> 
       {loading ? (
-        <AdhopeLoader    />
-      ) : error ? ( // Corrected conditional rendering here
+        <AdhopeLoader />
+      ) : error ? (
         //@ts-ignore
         <CardError error={error.message} />
       ) : (
@@ -77,6 +77,6 @@ export default function Home() {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 }
