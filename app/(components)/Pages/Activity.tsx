@@ -23,7 +23,7 @@ const Activity = ({ id, userID, setNavTabs }: HomeProps) => {
 
   useEffect(() => {
     const data = axios
-      .get(`https://perkox.com/api/v1/offers-iframe/clicks/${id}/${userID}`)
+      .get(`https://adhopemedia.com/api/GetOffers/clicks/${id}/${userID}`)
       .then((res) =>
         res.data.error ? setActivities(null) : setActivities(res.data)
       )
