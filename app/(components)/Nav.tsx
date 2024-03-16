@@ -1,16 +1,15 @@
-"use client";
 import { useEffect, useState } from "react";
 import { BsList } from "react-icons/bs";
 import LgSearchBar from "./LgSearchBar";
 import Image from "next/image";
 import Link from "next/link";
 
-interface navProps {
+interface NavProps {
   navTabs: string;
   setNavTabs: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Nav({ navTabs, setNavTabs }: navProps) {
+export default function Nav({ navTabs, setNavTabs }: NavProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -48,7 +47,20 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
           />
         </Link>
       </div>
-
+      <div className="flex justify-end">
+        {isMobile && (
+          <button
+            className="lg:hidden focus:outline-none -mt-9 w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
+            onClick={toggleMenu}
+          >
+            <BsList
+              className={`text-white transition-all duration-300 ease-in-out block h-6 w-6 ${
+                isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
+              }`}
+            />
+          </button>
+        )}
+      </div>
       {/* Navigation section */}
       <div
         className={`lg:grow ${
@@ -97,18 +109,9 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
       </div>
 
       {/* Icon menu section (moved to the end) */}
-      <div className="flex justify-end ">
+      <div className="flex justify-end">
         <LgSearchBar />
-        <button
-          className="lg:hidden focus:outline-none -mt-9 w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
-          onClick={toggleMenu}
-        >
-          <BsList
-            className={`text-white transition-all duration-300 ease-in-out  block h-6 w-6 ${
-              isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
-            }`}
-          />
-        </button>
+        {/* Menu toggle button for mobile */}
       </div>
     </div>
   );
