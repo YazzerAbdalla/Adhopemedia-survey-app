@@ -5,7 +5,7 @@ import React from "react";
 const IfNoActivities = ({
   setNavTabs,
 }: {
-  setNavTabs: React.Dispatch<React.SetStateAction<string>>;
+  setNavTabs: React.Dispatch<React.SetStateAction<string>> | null;
 }) => {
   return (
     <div className="pt-10 mt-7 xl:pt-20 items-center flex flex-col justify-center ">
@@ -18,25 +18,28 @@ const IfNoActivities = ({
       />
       <Link href="/" className="">
         <h2 className="flex justify-center items-center px-10 text-white mt-6">
-          You have 0 completed  tasks
+          {setNavTabs ? "You have 0 completed tasks" : "Not found !!!"}
         </h2>
       </Link>
 
-      <div
-        onClick={() => {
-          setNavTabs("home");
-        }}
-        className="action  bg-purple-900 mt-4 flex justify-center w-fit"
-      >
-        <span className="px-10 font-bold text-gray-200">
-        <Link href="/" className="">
+      {setNavTabs && (
+        <div
+          onClick={() => {
+            if (setNavTabs) {
+              setNavTabs("home");
+            }
+          }}
+          className="action  bg-purple-900 mt-4 flex justify-center w-fit"
+        >
+          <span className="px-10 font-bold text-gray-200">
+            <Link href="/" className="">
+              Check our offers!
+            </Link>
 
-          Check our offers!
-          </Link>
-
-          <span className="ml-2"> →</span>
-        </span>
-      </div>
+            <span className="ml-2"> →</span>
+          </span>
+        </div>
+      )}
     </div>
   );
 };

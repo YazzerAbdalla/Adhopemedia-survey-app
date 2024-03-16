@@ -1,4 +1,5 @@
 "use client";
+import { useSearchFilterContext } from "@/contexts/SearchFilterContext";
 import dynamic from "next/dynamic";
 
 const DynamicFaSearch = dynamic(
@@ -9,6 +10,11 @@ const DynamicFaSearch = dynamic(
 );
 
 export default function MSearchBar() {
+  const { searchFilter, setSearchFilter } = useSearchFilterContext();
+  const handleChange = (event: { target: { value: any } }) => {
+    const { value } = event.target;
+    setSearchFilter(value);
+  };
   return (
     <form className=" mx-auto pl-3 py-3 max-w-[359px] min-w-[359px] max-h-[41.76px] min-h-[41.76px] block lg:hidden">
       <label
@@ -26,6 +32,8 @@ export default function MSearchBar() {
           id="default-search"
           className="block w-full p-3 ps-10 text-sm text-gray-900 border-2 border-[#B064FE] rounded-3xl bg-gray-50 focus:ring-[#B064FE] focus:border-[#B064FE]"
           placeholder="Search Title..."
+          onChange={handleChange}
+          value={searchFilter}
           required
         />
       </div>
