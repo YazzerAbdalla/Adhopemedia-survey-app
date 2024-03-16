@@ -1,5 +1,5 @@
 import React from "react";
-import PerkoxLoader from "@/app/(components)/PerkoxLoader";
+import PerkoxLoader from "@/app/(components)/AdhopeLoader";
 
 const loading = () => {
   return <PerkoxLoader />;
