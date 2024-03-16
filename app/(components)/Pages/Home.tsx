@@ -15,7 +15,6 @@ import { DeviceTypeSort } from "@/app/(Fun)/DeviceTypeSort";
 import { searchFilterFunction } from "@/app/(Fun)/SearchFilterFunction";
 import { useSearchFilterContext } from "@/contexts/SearchFilterContext";
 import IfNoActivities from "../IfNoActivities";
-import PriceSortMenu from "../PriceSortMenu";
 import { useSelectedSortTypeContext } from "@/contexts/SelectedSortTypeContext";
 import { highSort } from "@/app/(Fun)/HighSort";
 import { lowSort } from "@/app/(Fun)/LowSort";
@@ -89,10 +88,6 @@ export default function Home({ id, userID }: HomeProps) {
           <NameOfSite />
           <MSearchBar />
           <FavouriteBox />
-          <PriceSortMenu
-            selectedSortType={selectedSortType}
-            setSelectedSortType={setSelectedSortType}
-          />
           {sortedData.length === 0 ? (
             // Render IfNoActivities component if SortDataByKindDevice is empty
             <div className="flex justify-center">
