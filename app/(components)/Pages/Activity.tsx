@@ -40,9 +40,9 @@ const Activity = ({ id, userID, setNavTabs }: HomeProps) => {
         </div>
       ) : (
         <section className="mt-14">
-          {activities ? (
-            <div className="flex  flex-col md:flex-row gap-10  content-center flex-wrap md:px-8 px-4 mt-7 w-full">
-              {activities.map(({ id, offername, status, image }) => (
+            {activities ? (
+         <div className="grid grid-cols-1 lg:grid-cols-2 px-8 lg:px-24  py-8 justify-center gap-5">
+         {activities.map(({ id, offername, status, image }) => (
                 <>
                   <ActivitiesCard
                     key={id}

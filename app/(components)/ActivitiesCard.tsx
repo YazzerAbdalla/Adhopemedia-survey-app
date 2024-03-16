@@ -22,16 +22,16 @@ const ActivitiesCard = ({ offername, status, image }: ActivitiesCardProps) => {
   };
 
   return (
-    <div className="flex bg-[#D3B4FF] items-center rounded-md gap-6 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2">
+   <div className=" flex bg-[#D3B4FF] items-center rounded-md gap-6 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2">
       <Image
-        className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px]   min-w-[70px] max-w-[70px]  min-h-[55px] max-h-[55px] py-2 px-3"
+        className="lg:max-w-[140px] lg:min-w-[140px] lg:max-h-[150px] lg:min-h-[150px]   min-w-[90px] max-w-[100px]  min-h-[55px] max-h-[55px] py-2 px-0"
         src={image}
         alt=""
         width={1000}
         height={1000}
       />
       <div className="flex flex-col ">
-        <h5 className=" text-sm lg:text-xl -mt-12 font-[600] tracking-tight text-[#1A0248] dark:text-white">
+        <h5 className=" text-sm lg:text-xl line-clamp-1 -mt-6 lg:-mt-12 font-[600] tracking-tight text-[#1A0248] dark:text-white">
         {offername}
         </h5>
 
@@ -54,6 +54,7 @@ const ActivitiesCard = ({ offername, status, image }: ActivitiesCardProps) => {
         </div>
       </div>
     </div>
+
   );
 };
 
