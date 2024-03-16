@@ -15,6 +15,10 @@ import { DeviceTypeSort } from "@/app/(Fun)/DeviceTypeSort";
 import { searchFilterFunction } from "@/app/(Fun)/SearchFilterFunction";
 import { useSearchFilterContext } from "@/contexts/SearchFilterContext";
 import IfNoActivities from "../IfNoActivities";
+import PriceSortMenu from "../PriceSortMenu";
+import { useSelectedSortTypeContext } from "@/contexts/SelectedSortTypeContext";
+import { highSort } from "@/app/(Fun)/HighSort";
+import { lowSort } from "@/app/(Fun)/LowSort";
 
 export default function Home() {
   const { dataArr, setDataArr } = useDataContext();
@@ -23,14 +27,20 @@ export default function Home() {
   const { filterKind, setFilterKind } = useFilteredObjContext();
   const { error, setError } = useErrorContext();
   const [loading, setLoading] = useState(true);
-  const { searchFilter, setSearchFilter } = useSearchFilterContext();
+  const { searchFilter } = useSearchFilterContext();
+  const { selectedSortType, setSelectedSortType } =
+    useSelectedSortTypeContext();
 
   let SortDataByKindDevice = DeviceTypeSort(dataArr, filterKind);
   SortDataByKindDevice = searchFilterFunction(dataArr, searchFilter);
-  console.log(
-    "🚀 ~ Home ~ searchFilterFunction(dataArr, searchFilter);:",
-    searchFilterFunction(dataArr, searchFilter)
-  );
+  if (selectedSortType === "High Price") {
+    SortDataByKindDevice = highSort(dataArr);
+  } else if (selectedSortType === "Lower Price") {
+    SortDataByKindDevice = lowSort(dataArr);
+  } else if (selectedSortType === "Default") {
+    SortDataByKindDevice = dataArr;
+  }
+
   useEffect(() => {
     axios
       .get("https://adhopemedia.com/api/GetOffers/10000/ker00sama")
@@ -65,6 +75,10 @@ export default function Home() {
           <NameOfSite />
           <MSearchBar />
           <FavouriteBox />
+          <PriceSortMenu
+            selectedSortType={selectedSortType}
+            setSelectedSortType={setSelectedSortType}
+          />
           {SortDataByKindDevice.length === 0 ? (
             // Render IfNoActivities component if SortDataByKindDevice is empty
             <div className="flex justify-center">
