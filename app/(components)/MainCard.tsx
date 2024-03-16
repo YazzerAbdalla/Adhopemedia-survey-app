@@ -12,7 +12,7 @@ export default function MainCard({
   campaign_os_target,
 }: CardsProps) {
   return (
-    <div className="max-w-sm  hidden cursor-pointer lg:flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
+    <div className="max-w-sm  hidden lg:block cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
       <div className="w-full  max-h-[200px] min-h-[200px]">
         <Image
           className="mx-auto max-h-[210px] min-h-[210px] "
@@ -39,7 +39,7 @@ export default function MainCard({
                 ? "/desktop.svg"
                 : campaign_os_target == "android"
                 ? "/android.png"
-                : "ios-icon.svg"
+                : "/ios-icon.svg"
             }
             alt="icon"
             width={20}

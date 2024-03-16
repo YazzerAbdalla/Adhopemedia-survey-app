@@ -12,7 +12,7 @@ export default function MainCard({
   campaign_os_target,
 }: CardsProps) {
   return (
-    <div className="max-w-[175px] min-w-[175px] max-h-[260px] min-h-[260px]  cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] block lg:hidden ">
+    <div className="max-w-[175px] min-w-[175px] max-h-[260px] min-h-[260px]  cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E]  lg:hidden ">
       <div className="w-full  max-w-[200px] min-w-[200px] max-h-[135px] min-h-[135px] ">
         <Image
           className="mx-auto  max-w-[200px] min-w-[200px] max-h-[135px] min-h-[135px] "
@@ -28,21 +28,22 @@ export default function MainCard({
         <div className="font-bold text-md text-white mb-2 line-clamp-1  ">
           {name}
         </div>
-    
-      
+
         <div className="flex justify-end py-4 ">
-        <div className=""><Image
-            src={
-              campaign_os_target == "All"
-                ? "/desktop.svg"
-                : campaign_os_target == "android"
-                ? "/android.png"
-                : "ios-icon.svg"
-            }
-            alt="icon"
-            width={20}
-            height={20}
-          ></Image></div>
+          <div className="">
+            <Image
+              src={
+                campaign_os_target == "All"
+                  ? "/desktop.svg"
+                  : campaign_os_target == "android"
+                  ? "/android.png"
+                  : "/ios-icon.svg"
+              }
+              alt="icon"
+              width={20}
+              height={20}
+            ></Image>
+          </div>
           <div
             className="flex justify-center items-center text-[#180934] font-bold  text-md mx-4  py-1 px-15 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px]  "
             style={{

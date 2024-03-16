@@ -40,7 +40,7 @@ export default function FavouriteCard({
                 ? "/desktop.svg"
                 : campaign_os_target == "android"
                 ? "/android.png"
-                : "ios-icon.svg"
+                : "/ios-icon.svg"
             }
             alt="icon"
             width={20}
