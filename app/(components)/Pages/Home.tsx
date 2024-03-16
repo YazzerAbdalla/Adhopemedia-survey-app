@@ -57,7 +57,7 @@ export default function Home() {
           <MSearchBar />
           <FavouriteBox />
           <div className="flex w-full justify-center px-8 lg:px-24 mt-12">
-            <div className="grid justify-center lg:grid-cols-3 gap-6">
+            <div className="grid justify-center grid-cols-2  lg:grid-cols-3 gap-6">
               {SortDataByKindDevice?.map(
                 ({
                   icon,
