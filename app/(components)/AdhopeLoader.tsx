@@ -1,6 +1,6 @@
 "use client";
 
-const PerkoxLoader = () => {
+const AdhopeLoader = () => {
   return (
     <div className="preloader-container">
   <div className="spinner-container">
@@ -20,4 +20,4 @@ const PerkoxLoader = () => {
   );
 };
 
-export default PerkoxLoader;
+export default AdhopeLoader;
