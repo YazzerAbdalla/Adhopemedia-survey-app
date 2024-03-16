@@ -1,14 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { BsList } from "react-icons/bs";
 import LgSearchBar from "./LgSearchBar";
 import Image from "next/image";
+import Link from "next/link";
 
 interface navProps {
   navTabs: string;
   setNavTabs: React.Dispatch<React.SetStateAction<string>>;
 }
+
 export default function Nav({ navTabs, setNavTabs }: navProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -33,20 +34,22 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
 
   return (
     <div className="fixed bg-[#1D053B] bg-opacity-55 top-0 z-[1000] flex flex-col lg:flex-row w-full py-7 lg:px-28 lg:py-4 px-0">
-      <div className="flex items-center justify-between px-4 lg:px-0">
-        <Image src={"/kero1.svg"} alt="" width={70} height={0} />
-        <button
-          className="lg:hidden focus:outline-none w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
-          onClick={toggleMenu}
-        >
-          <BsList
-            className={`text-white transition-all duration-300 ease-in-out  block h-6 w-6 ${
-              isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
-            }`}
+      {/* Logo section */}
+      <div className="flex items-center lg:justify-between justify-center lg:px-0">
+        <Link href="/" className="">
+          <Image
+            src={"/kero1.svg"}
+            alt=""
+            width={70}
+            height={0}
+            onClick={() => {
+              setNavTabs("home");
+            }}
           />
-        </button>
+        </Link>
       </div>
 
+      {/* Navigation section */}
       <div
         className={`lg:grow ${
           isMenuOpen ? "block" : "hidden"
@@ -92,8 +95,20 @@ export default function Nav({ navTabs, setNavTabs }: navProps) {
           </div>
         </div>
       </div>
-      <div className="flex justify-end">
+
+      {/* Icon menu section (moved to the end) */}
+      <div className="flex justify-end ">
         <LgSearchBar />
+        <button
+          className="lg:hidden focus:outline-none -mt-9 w-8 h-8 overflow-hidden flex items-center justify-center transition-all duration-300 ease-in-out text-white"
+          onClick={toggleMenu}
+        >
+          <BsList
+            className={`text-white transition-all duration-300 ease-in-out  block h-6 w-6 ${
+              isMenuOpen ? "rotate-45 translate-y-1" : "-translate-y-1"
+            }`}
+          />
+        </button>
       </div>
     </div>
   );

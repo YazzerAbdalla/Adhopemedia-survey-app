@@ -1,4 +1,6 @@
-import { useEffect } from "react";
+import { Children, useEffect, useState } from "react";
+import { MinusIcon, PlusIcon } from "@radix-ui/react-icons";
+import { Bar, BarChart, ResponsiveContainer } from "recharts";
 import { Dialog } from "@radix-ui/react-dialog";
 
 import {
@@ -6,14 +8,28 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { useDialog } from "@/contexts/DialogContext";
+import Image from "next/image";
 import DialogNewHeader from "./DrawerComponents/DialogNewHeader";
+import { useDialogTabs } from "@/contexts/DialogTabs";
+import { useCardContext } from "@/contexts/CardContext";
 import MainCard from "./MainCard";
 import { CardsProps } from "@/types/cardsTypes";
 import DialogTabs from "./DrawerComponents/DialogTabs";
+import { Button } from "@/components/ui/button";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
 import DialogDetails from "./DrawerComponents/DialogDetails";
 import DialogLinks from "./DrawerComponents/DialogLinks";
-import MoMainCard from "./MoMainCard";
+import FavouriteCard from "./FavouriteCard";
+
+interface dataProps {
+  name: string;
+  instructions: string;
+  image: string;
+  os: string;
+  reward: number;
+  id: string;
+}
 
 const MainDialog = ({
   campaign_id,
@@ -35,17 +51,7 @@ const MainDialog = ({
     <Dialog>
       <DialogTrigger asChild>
         <div className="cursor-pointer">
-          <MainCard
-            url=""
-            amount={amount}
-            campaign_id={campaign_id}
-            campaign_os_target={campaign_os_target}
-            description={description}
-            icon={icon}
-            short_description={short_description}
-            name={name}
-          />
-          <MoMainCard
+          <FavouriteCard
             url=""
             amount={amount}
             campaign_id={campaign_id}

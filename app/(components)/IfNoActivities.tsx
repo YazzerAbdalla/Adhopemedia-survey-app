@@ -29,7 +29,11 @@ const IfNoActivities = ({
         className="action  bg-purple-900 mt-4 flex justify-center w-fit"
       >
         <span className="px-10 font-bold text-gray-200">
+        <Link href="/" className="">
+
           Check our offers!
+          </Link>
+
           <span className="ml-2"> →</span>
         </span>
       </div>
