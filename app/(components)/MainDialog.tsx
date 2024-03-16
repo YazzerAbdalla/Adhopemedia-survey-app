@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { useDeviceType } from "@/contexts/DeviceTypeContext";
 import DialogDetails from "./DrawerComponents/DialogDetails";
 import DialogLinks from "./DrawerComponents/DialogLinks";
+import MoMainCard from "./MoMainCard";
 
 interface dataProps {
   name: string;
@@ -51,6 +52,16 @@ const MainDialog = ({
       <DialogTrigger asChild>
         <div className="cursor-pointer">
           <MainCard
+            url=""
+            amount={amount}
+            campaign_id={campaign_id}
+            campaign_os_target={campaign_os_target}
+            description={description}
+            icon={icon}
+            short_description={short_description}
+            name={name}
+          />
+          <MoMainCard
             url=""
             amount={amount}
             campaign_id={campaign_id}
