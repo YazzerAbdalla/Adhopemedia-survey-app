@@ -32,25 +32,18 @@ export default function MainCard({
           {short_description ? short_description : description}
         </p>
         <div className="w-fit mt-4 border-[rgba(255,255,255,0.5)] rad border-[1px] rounded-3xl  py-1 px-16 ">
-          {campaign_os_target == "All" ? (
-            <h1 className="text-white">
-              {" "}
-              <Image src={"/desktop.svg"} alt="" width={20} height={20} />
-            </h1>
-          ) : (
-            <Image
-              src={
-                campaign_os_target == "All"
-                  ? "/desktop.svg"
-                  : campaign_os_target == "android"
-                  ? "/android.png"
-                  : "ios-icon.svg"
-              }
-              alt="icon"
-              width={20}
-              height={20}
-            ></Image>
-          )}
+          <Image
+            src={
+              campaign_os_target == "All"
+                ? "/desktop.svg"
+                : campaign_os_target == "android"
+                ? "/android.png"
+                : "ios-icon.svg"
+            }
+            alt="icon"
+            width={20}
+            height={20}
+          ></Image>
         </div>
         <div className="flex justify-end py-4 ">
           <div

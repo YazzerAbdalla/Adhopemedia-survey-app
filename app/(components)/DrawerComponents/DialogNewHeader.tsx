@@ -29,22 +29,18 @@ const DialogNewHeader = ({
             {short_description ? short_description : description}
           </p>
           <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
-            {campaign_os_target == "All" ? (
-              <h1 className="text-white text-md">All</h1>
-            ) : (
-              <Image
-                src={
-                  campaign_os_target == "All"
-                    ? "/desktop.svg"
-                    : campaign_os_target == "android"
-                    ? "/android.png"
-                    : "ios-icon.svg"
-                }
-                alt="icon"
-                width={15}
-                height={15}
-              ></Image>
-            )}
+            <Image
+              src={
+                campaign_os_target == "All"
+                  ? "/desktop.svg"
+                  : campaign_os_target == "android"
+                  ? "/android.png"
+                  : "ios-icon.svg"
+              }
+              alt="icon"
+              width={20}
+              height={20}
+            ></Image>
           </div>
           <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
             <div

@@ -13,7 +13,7 @@ export default function FavouriteCard({
 }: CardsProps) {
   return (
     <div
-      className="flex items-center rounded-md gap-1 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2"
+      className="flex items-center z-0 rounded-md gap-1 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2"
       style={{
         background:
           "linear-gradient(93.43deg, #8359FE 1.1%, #F274FE 32.78%, #F772FE 58.67%, #FE53F3 71.12%, #FF26E4 100%)",
@@ -34,22 +34,18 @@ export default function FavouriteCard({
           {short_description ? short_description : description}
         </p>
         <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
-          {campaign_os_target == "All" ? (
-            <h1 className="text-white">All</h1>
-          ) : (
-            <Image
-              src={
-                campaign_os_target == "All"
-                  ? "/desktop.svg"
-                  : campaign_os_target == "android"
-                  ? "/android.png"
-                  : "ios-icon.svg"
-              }
-              alt="icon"
-              width={20}
-              height={20}
-            ></Image>
-          )}
+          <Image
+            src={
+              campaign_os_target == "All"
+                ? "/desktop.svg"
+                : campaign_os_target == "android"
+                ? "/android.png"
+                : "ios-icon.svg"
+            }
+            alt="icon"
+            width={20}
+            height={20}
+          ></Image>
         </div>
         <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
           <button className="text-[#180934] text-[10px]  lg:text-[16px] lg:-my-1  -my-1.5  rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
