@@ -1,3 +1,4 @@
+// Another array of cards to emplement on it the sort of highprice
 "use client";
 import { CardsProps } from "@/types/cardsTypes";
 import React, {

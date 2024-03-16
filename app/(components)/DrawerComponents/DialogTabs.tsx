@@ -5,6 +5,7 @@ import { useDeviceType } from "@/contexts/DeviceTypeContext";
 const DialogTabs = () => {
   const { dialogTab, setDialogTab } = useDialogTabs();
   const { deviceType } = useDeviceType();
+  console.log("🚀 ~ DialogTabs ~ deviceType:", deviceType);
 
   return (
     <div

@@ -1,3 +1,4 @@
+// Array to amplement on it the device type sort
 "use client";
 import { CardsProps } from "@/types/cardsTypes";
 import React, {
@@ -10,8 +11,8 @@ import React, {
 } from "react";
 
 interface FilteredDataContextProps {
-  filteredDataArr: CardsProps[];
-  setFilteredDataArr: Dispatch<SetStateAction<CardsProps[]>>;
+  filterKind: string;
+  setFilterKind: Dispatch<SetStateAction<string>>;
 }
 
 const FilteredDataContext = createContext<FilteredDataContextProps | undefined>(
@@ -21,18 +22,16 @@ const FilteredDataContext = createContext<FilteredDataContextProps | undefined>(
 export const FilteredDataProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [filteredDataArr, setFilteredDataArr] = useState<CardsProps[]>([]);
+  const [filterKind, setFilterKind] = useState<string>("");
 
   return (
-    <FilteredDataContext.Provider
-      value={{ filteredDataArr, setFilteredDataArr }}
-    >
+    <FilteredDataContext.Provider value={{ filterKind, setFilterKind }}>
       {children}
     </FilteredDataContext.Provider>
   );
 };
 
-export const useFilteredDataContext = () => {
+export const useFilteredObjContext = () => {
   const context = useContext(FilteredDataContext);
   if (!context) {
     throw new Error(

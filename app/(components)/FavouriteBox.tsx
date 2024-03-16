@@ -6,24 +6,23 @@ import { useDeviceType } from "@/contexts/DeviceTypeContext";
 import { FavProps } from "@/types/FavProps";
 import { highSort } from "../(Fun)/HighSort";
 import { useSortContext } from "@/contexts/SortContext";
+import { useFilteredObjContext } from "@/contexts/FilterKindContext";
 
 const FavouriteBox = () => {
   const [fav, setFav] = useState<FavProps[]>([]);
-  console.log("🚀 ~ FavouriteBox ~ fav:", fav);
-  const { deviceType, setDeviceType } = useDeviceType();
   const { dataArr } = useDataContext();
-  const { sortArr } = useSortContext();
+  const { filterKind, setFilterKind } = useFilteredObjContext();
 
-  let sortedArr = highSort(sortArr);
+  let sortedArr = highSort(dataArr);
   let theFavCards: FavProps[];
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     theFavCards = dataArr.filter((item) => item.favourite === 1);
-    setFav(theFavCards.length <= 0 ? sortArr : theFavCards);
+    setFav(theFavCards.length <= 0 ? sortedArr : theFavCards);
   }, [dataArr]);
 
   return (
-    <div className="w-full flex justify-center py-12 lg:py-0">
+    <div className="w-full flex justify-center px-16 py-12 lg:py-0">
       <div className=" shadow-lg rounded-xl p-6 lg:p-12 bg-[#1A004A80] ">
         <div className="flex mb-3 flex-row gap-6 justify-between ">
           <div>
@@ -36,8 +35,8 @@ const FavouriteBox = () => {
           </div>
           <div className="font-bold mt-6 h-[26px] mb-8  rounded-lg  w-fit py-1 px-6">
             <DeviceFilter
-              selectedPlatform={deviceType}
-              setSelectedPlatform={setDeviceType}
+              selectedPlatform={filterKind}
+              setSelectedPlatform={setFilterKind}
             />
           </div>
         </div>

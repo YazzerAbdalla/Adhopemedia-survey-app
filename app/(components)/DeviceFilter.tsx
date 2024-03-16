@@ -2,7 +2,7 @@ import { Dispatch, Fragment, SetStateAction } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
-export const platforms = ["Device Type", "All", "iOS", "Android"];
+export const platforms = ["Device Type", "All", "ios", "android"];
 interface sortProps {
   selectedPlatform: string;
   setSelectedPlatform: Dispatch<SetStateAction<string>>;
@@ -13,7 +13,7 @@ export default function DeviceFilter({
   setSelectedPlatform,
 }: sortProps) {
   return (
-    <div className="flex items-center mt-3  justify-center rounded-lg space-x-4">
+    <div className="flex items-center mt-3 justify-center rounded-lg space-x-4">
       {/* button*/}
       <Listbox value={selectedPlatform} onChange={setSelectedPlatform}>
         <div className="relative mt-1 z-[1000] min-w-[8.8rem] ">
@@ -24,7 +24,7 @@ export default function DeviceFilter({
             }}
           >
             <span className="block truncate">
-              {selectedPlatform || "Device Type"}
+              {selectedPlatform === "unkown" ? "Device Type" : selectedPlatform}
             </span>
             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
               <ChevronUpDownIcon

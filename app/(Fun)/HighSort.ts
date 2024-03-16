@@ -1,21 +1,23 @@
 import { CardsProps } from "@/types/cardsTypes";
 
 export function highSort(arr: CardsProps[]) {
-  arr.forEach((item) => {
+  // Clone the original array
+  const newArr = arr.map((item) => ({ ...item }));
+
+  newArr.forEach((item) => {
     let amountArr = item.amount.split(",");
     let newAmount;
     if (amountArr.length === 2) {
-      console.log("🚀 ~ arr.forEach ~ amountArr:", amountArr);
       // Concatenate elements of amountArr into one string
       newAmount = amountArr.join("");
-      console.log("🚀 ~ arr.forEach ~ newAmount:", newAmount);
-      // Update the amount property of the current item in arr
+      // Update the amount property of the current item in newArr
       item.amount = newAmount;
     }
   });
-  // Use the sort() method to sort the array in place
-  arr.sort((a, b) => parseInt(b.amount) - parseInt(a.amount));
-  // arr.map((a) => a.amount.toString())
+
+  // Sort the cloned array
+  newArr.sort((a, b) => parseInt(b.amount) - parseInt(a.amount));
+
   // Return the sorted array
-  return arr;
+  return newArr;
 }
