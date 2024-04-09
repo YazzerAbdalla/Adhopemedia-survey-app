@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { CardsProps } from "@/types/cardsTypes";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function MainCard({
   icon,
@@ -14,13 +15,12 @@ export default function MainCard({
   return (
     <div className="max-w-sm  hidden lg:block cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E] ">
       <div className="w-full  max-h-[200px] min-h-[200px]">
-        <Image
+        <img
           className="mx-auto max-h-[210px] min-h-[210px] "
           src={icon}
           alt="Sunset in the mountains"
           width={300}
           height={50}
-          objectFit="contain"
           typeof="lazy"
         />
       </div>
@@ -33,7 +33,7 @@ export default function MainCard({
           {short_description ? short_description : description}
         </p>
         <div className="w-fit mt-4 border-[rgba(255,255,255,0.5)] rad border-[1px] rounded-3xl  py-1 px-16 ">
-          <Image
+          <img
             src={
               campaign_os_target == "All"
                 ? "/desktop.svg"
@@ -44,7 +44,7 @@ export default function MainCard({
             alt="icon"
             width={20}
             height={20}
-          ></Image>
+          ></img>
         </div>
         <div className="flex justify-end py-4 ">
           <div
@@ -56,7 +56,7 @@ export default function MainCard({
           >
             {`${amount} `}
 
-            <Image src={"/coinIcon.png"} alt="" width={20} height={20} />
+            <img src={"/coinIcon.png"} alt="" width={20} height={20} />
           </div>
         </div>
       </div>

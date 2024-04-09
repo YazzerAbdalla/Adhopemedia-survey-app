@@ -1,4 +1,5 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+// import Image from "next/image";
 import React from "react";
 
 interface ActivitiesCardProps {
@@ -24,7 +25,7 @@ const ActivitiesCard = ({ offername, status, image }: ActivitiesCardProps) => {
   return (
     <div className="flex justify-center">
       <div className=" flex bg-[#D3B4FF] items-center rounded-md gap-6 relative lg:max-w-[566px] lg:min-w-[566px] max-w-[313px]  min-w-[313px] lg:max-h-[144px] lg:min-h-[144px] p-2">
-        <Image
+        <img
           className="lg:max-w-[140px] lg:min-w-[140px] lg:max-h-[150px] lg:min-h-[150px]   min-w-[90px] max-w-[100px] object-c  min-h-[55px] max-h-[55px] py-2 px-0"
           src={image}
           alt=""

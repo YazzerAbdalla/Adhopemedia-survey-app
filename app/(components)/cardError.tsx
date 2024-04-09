@@ -1,13 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 interface ErrorProps {
   error: string;
 }
 export default function CardError({ error }: ErrorProps) {
   return (
     <div className="pt-10 xl:pt-20 flex flex-col h-full items-center justify-center">
-      <Image
+      <img
         src="/Asset_2.svg"
         alt="hero image"
         width={1025}

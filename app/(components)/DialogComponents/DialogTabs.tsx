@@ -10,7 +10,7 @@ const DialogTabs = () => {
   return (
     <div
       className={`flex ${
-        deviceType !== "All" ? "justify-between" : "justify-center"
+        deviceType !== "All" ? "justify-center" : "justify-center"
       } lg:px-20 px-5 items-center w-full bg-[#1F0349] text-white`}
     >
       <div className="flex flex-col justify-center items-center">
@@ -25,7 +25,7 @@ const DialogTabs = () => {
         )}
       </div>
 
-      {deviceType !== "All" && (
+      {/* {deviceType !== "All" && (
         <div className="flex flex-col justify-center items-center">
           <div
             onClick={() => setDialogTab("links")}
@@ -37,7 +37,7 @@ const DialogTabs = () => {
             <div className="bg-[#B094E5] w-[180px]  h-[7px] rounded-tl-3xl rounded-tr-3xl"></div>
           )}
         </div>
-      )}
+      )} */}
     </div>
   );
 };

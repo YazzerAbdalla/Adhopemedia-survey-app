@@ -1,4 +1,5 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
+// import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -9,7 +10,7 @@ const IfNoActivities = ({
 }) => {
   return (
     <div className="pt-10 mt-7 xl:pt-20 items-center flex flex-col justify-center ">
-      <Image
+      <img
         src="/ifnocard.jpg"
         alt="hero image"
         width={1025}

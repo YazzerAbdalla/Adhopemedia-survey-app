@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import { BsList } from "react-icons/bs";
 import LgSearchBar from "./LgSearchBar";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
 interface NavProps {
@@ -36,7 +37,7 @@ export default function Nav({ navTabs, setNavTabs }: NavProps) {
       {/* Logo section */}
       <div className="flex items-center lg:justify-between justify-center lg:px-0">
         <div className=" cursor-pointer">
-          <Image
+          <img
             src={"/kero1.svg"}
             alt=""
             width={70}

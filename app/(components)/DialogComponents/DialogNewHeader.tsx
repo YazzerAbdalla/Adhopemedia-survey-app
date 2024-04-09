@@ -1,6 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import { useDataContext } from "@/contexts/DataContext";
 import { CardsProps } from "@/types/cardsTypes";
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 
 const DialogNewHeader = ({
@@ -14,7 +15,7 @@ const DialogNewHeader = ({
   return (
     <div className="w-full p-6 h-fit">
       <div className="flex items-center rounded-md gap-1 relative w-full bg-[#280A46] lg:max-w-[500px] lg:min-w-[480px] max-w-[313px]  min-w-[313px] min-h-[100px] max-h-[100px] lg:max-h-[144px] lg:min-h-[144px]  ">
-        <Image
+        <img
           className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px] rounded-[20px] min-w-[80px] max-w-[80px]  min-h-[65px] max-h-[65px] py-1 px-2"
           src={icon}
           alt=""
@@ -29,7 +30,7 @@ const DialogNewHeader = ({
             {short_description ? short_description : description}
           </p>
           <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
-            <Image
+            <img
               src={
                 campaign_os_target == "All"
                   ? "/desktop.svg"
@@ -40,7 +41,7 @@ const DialogNewHeader = ({
               alt="icon"
               width={20}
               height={20}
-            ></Image>
+            ></img>
           </div>
           <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
             <div
@@ -51,7 +52,7 @@ const DialogNewHeader = ({
               }}
             >
               {amount}
-              <Image src={"/coinIcon.png"} alt="" width={18} height={18} />
+              <img src={"/coinIcon.png"} alt="" width={18} height={18} />
             </div>
           </div>
         </div>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { Dialog } from "@radix-ui/react-dialog";
 
@@ -5,6 +6,7 @@ import {
   Dialog as RadixDialog,
   DialogContent,
   DialogTrigger,
+  DialogFooter,
 } from "@/components/ui/dialog";
 import DialogNewHeader from "./DialogComponents/DialogNewHeader";
 import MainCard from "./MainCard";
@@ -14,6 +16,7 @@ import { useDeviceType } from "@/contexts/DeviceTypeContext";
 import DialogDetails from "./DialogComponents/DialogDetails";
 import DialogLinks from "./DialogComponents/DialogLinks";
 import MoMainCard from "./MoMainCard";
+import { useDialogTabs } from "@/contexts/DialogTabs";
 
 const MainDialog = ({
   campaign_id,
@@ -27,7 +30,12 @@ const MainDialog = ({
   goals,
 }: CardsProps) => {
   const { setDeviceType } = useDeviceType();
+  const { deviceType } = useDeviceType();
+  const { dialogTab, setDialogTab } = useDialogTabs();
 
+  const handleDismiss = () => {
+    setDialogTab("details");
+  }; // Only run this effect once, when the component is mounted
   useEffect(() => {
     setDeviceType(campaign_os_target);
   }, []);
@@ -93,6 +101,26 @@ const MainDialog = ({
           amount={amount}
           campaign_os_target={campaign_os_target}
         />
+        <DialogFooter>
+          {dialogTab !== "links" &&
+            (deviceType === "web" ||
+              ( campaign_os_target === "ios" && deviceType === "iOS") ||
+              ( campaign_os_target === "android" && deviceType === "Android")) && (
+              <div className="w-full flex px-6">
+                <a
+                  className="flex justify-center items-center text-[#180934] font-bold text-md py-1 px-16 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px]"
+                  style={{
+                    background:
+                      "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
+                  }}
+                  href={url}
+                >
+                  {`${amount} `}
+                  <img src={"/coinIcon.png"} alt="" width={20} height={20} />
+                </a>
+              </div>
+            )}
+        </DialogFooter>
       </DialogContent>
     </Dialog>
   );

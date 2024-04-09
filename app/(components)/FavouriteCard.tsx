@@ -1,7 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { CardsProps } from "@/types/cardsTypes";
-import Image from "next/image";
 
 export default function FavouriteCard({
   icon,
@@ -19,7 +19,7 @@ export default function FavouriteCard({
           "linear-gradient(93.43deg, #8359FE 1.1%, #F274FE 32.78%, #F772FE 58.67%, #FE53F3 71.12%, #FF26E4 100%)",
       }}
     >
-      <Image
+      <img
         className="lg:max-w-[137px] lg:min-w-[137px] lg:max-h-[120px] lg:min-h-[120px]   min-w-[80px] max-w-[80px]  min-h-[65px] max-h-[65px] py-1 px-2"
         src={icon}
         alt=""
@@ -34,7 +34,7 @@ export default function FavouriteCard({
           {short_description ? short_description : description}
         </p>
         <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
-          <Image
+          <img
             src={
               campaign_os_target == "All"
                 ? "/desktop.svg"
@@ -45,7 +45,7 @@ export default function FavouriteCard({
             alt="icon"
             width={20}
             height={20}
-          ></Image>
+          ></img>
         </div>
         <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
           <button className="text-[#180934] text-[10px]  lg:text-[16px] lg:-my-1  -my-1.5  rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
