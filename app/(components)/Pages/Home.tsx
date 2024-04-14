@@ -19,6 +19,7 @@ import { useSelectedSortTypeContext } from "@/contexts/SelectedSortTypeContext";
 import { highSort } from "@/app/(Fun)/HighSort";
 import { lowSort } from "@/app/(Fun)/LowSort";
 import { CardsProps } from "@/types/cardsTypes";
+import { detectDeviceType } from "@/app/(Fun)/DetectDeviceType";
 
 interface HomeProps {
   id: string;
@@ -39,6 +40,7 @@ export default function Home({ id, userID }: HomeProps) {
   let SortDataByKindDevice: CardsProps[];
 
   useEffect(() => {
+    setDeviceType(detectDeviceType(navigator.userAgent));
     axios
       .get(`https://adhopemedia.com/api/GetOffers/${id}/${userID}`)
       .then((res) => {
@@ -48,7 +50,6 @@ export default function Home({ id, userID }: HomeProps) {
           setDataArr(res.data.offers);
           setSortArr(res.data.offers);
           setFilterKind("unkown");
-          setDeviceType(res.data.offers[0].campaign_os_target);
         }
         setLoading(false);
       })
@@ -75,7 +76,6 @@ export default function Home({ id, userID }: HomeProps) {
 
     setSortedData(SortDataByKindDevice);
   }, [dataArr, filterKind, searchFilter, selectedSortType]); // Dependencies for useEffect
-
   return (
     <div style={{ overflowX: "hidden" }}>
       {loading ? (
@@ -103,6 +103,7 @@ export default function Home({ id, userID }: HomeProps) {
                     name,
                     short_description,
                     description,
+                    instructions,
                     amount,
                     campaign_os_target,
                     campaign_id,
@@ -114,6 +115,7 @@ export default function Home({ id, userID }: HomeProps) {
                       name={name}
                       short_description={short_description}
                       description={description}
+                      instructions={instructions}
                       amount={amount}
                       campaign_os_target={campaign_os_target}
                       campaign_id={campaign_id}

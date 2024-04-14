@@ -49,7 +49,7 @@ export default function FavouriteCard({
         </div>
         <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
           <button className="text-[#180934] text-[10px]  lg:text-[16px] lg:-my-1  -my-1.5  rounded w-fit font-bold text-sm bg-[#FBCCFF] px-[12px] lg:px-14 lg:py-2  ">
-            {amount}
+            {amount} 
           </button>
         </div>
       </div>

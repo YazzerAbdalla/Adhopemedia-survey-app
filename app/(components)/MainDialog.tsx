@@ -24,21 +24,15 @@ const MainDialog = ({
   name,
   short_description,
   description,
+  instructions,
   amount,
   campaign_os_target,
   url,
   goals,
 }: CardsProps) => {
-  const { setDeviceType } = useDeviceType();
   const { deviceType } = useDeviceType();
-  const { dialogTab, setDialogTab } = useDialogTabs();
+  const { dialogTab } = useDialogTabs();
 
-  const handleDismiss = () => {
-    setDialogTab("details");
-  }; // Only run this effect once, when the component is mounted
-  useEffect(() => {
-    setDeviceType(campaign_os_target);
-  }, []);
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -86,6 +80,7 @@ const MainDialog = ({
           campaign_id={campaign_id}
           campaign_os_target={campaign_os_target}
           description={description}
+          instructions={instructions}
           icon={icon}
           short_description={short_description}
           name={name}
@@ -103,10 +98,11 @@ const MainDialog = ({
         />
         <DialogFooter>
           {dialogTab !== "links" &&
-            (deviceType === "web" ||
-              ( campaign_os_target === "ios" && deviceType === "iOS") ||
-              ( campaign_os_target === "android" && deviceType === "Android")) && (
-              <div className="w-full flex px-6">
+            (deviceType === "Web" ||
+              (campaign_os_target === "ios" && deviceType === "ios") ||
+              (campaign_os_target === "android" &&
+                deviceType === "android")) && (
+              <div className="w-full flex justify-center items-center ">
                 <a
                   className="flex justify-center items-center text-[#180934] font-bold text-md py-1 px-16 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px]"
                   style={{

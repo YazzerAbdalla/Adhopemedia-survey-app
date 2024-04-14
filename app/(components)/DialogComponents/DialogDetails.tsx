@@ -10,6 +10,7 @@ const DialogDetails = ({
   name,
   short_description,
   description,
+  instructions,
   amount,
   campaign_os_target,
   url,
@@ -29,9 +30,23 @@ const DialogDetails = ({
               <span className="title">Offer description :</span>
               <h1 className="text-gray-300 font-bold text-sm "> {name} : </h1>
               <p className="description"> {description && description}</p>
+              {instructions && (
+                <div className="w-full border-t-[15px] border-b-[15px] border-[#B094E5] rounded-[14px] p-6">
+                  <span className="title">Instrucions : </span>
+                  <p className="description"> {instructions}</p>
+                </div>
+              )}
               <span className="title">
                 To enjoy our offerwall, please remember:
               </span>
+
+              {instructions && (
+                <div className="w-full border-t-[15px] border-b-[15px] border-[#0f193d] rounded-[14px] p-6">
+                  <span className="title">Instrucions : </span>
+                  <p className="description"> {instructions}</p>
+                </div>
+              )}
+
               <p className="text-gray-300 font-bold text-sm ">
                 <ol>
                   <br />{" "}
@@ -82,7 +97,7 @@ const DialogDetails = ({
                   <hr style={hrStyle} />
                 </ol>
                 <br />{" "}
-                <a
+                {/* <a
                   href={url}
                   className="gaming-button flex text-center item-center mx-30 justify-center"
                   style={{
@@ -91,7 +106,7 @@ const DialogDetails = ({
                   }}
                 >
                   Earn +{amount} points
-                </a>
+                </a> */}
               </p>
             </div>
           </div>
