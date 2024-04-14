@@ -40,13 +40,6 @@ const DialogDetails = ({
                 To enjoy our offerwall, please remember:
               </span>
 
-              {instructions && (
-                <div className="w-full border-t-[15px] border-b-[15px] border-[#0f193d] rounded-[14px] p-6">
-                  <span className="title">Instrucions : </span>
-                  <p className="description"> {instructions}</p>
-                </div>
-              )}
-
               <p className="text-gray-300 font-bold text-sm ">
                 <ol>
                   <br />{" "}
