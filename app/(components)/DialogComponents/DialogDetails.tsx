@@ -30,16 +30,15 @@ const DialogDetails = ({
               <span className="title">Offer description :</span>
               <h1 className="text-gray-300 font-bold text-sm "> {name} : </h1>
               <p className="description"> {description && description}</p>
-              <span className="title">
-                To enjoy our offerwall, please remember:
-              </span>
-
               {instructions && (
-                <div className="w-full border-t-[15px] border-b-[15px] border-[#0f193d] rounded-[14px] p-6">
+                <div className="w-full border-t-[15px] border-b-[15px] border-[#B094E5] rounded-[14px] p-6">
                   <span className="title">Instrucions : </span>
                   <p className="description"> {instructions}</p>
                 </div>
               )}
+              <span className="title">
+                To enjoy our offerwall, please remember:
+              </span>
 
               <p className="text-gray-300 font-bold text-sm ">
                 <ol>
@@ -91,16 +90,6 @@ const DialogDetails = ({
                   <hr style={hrStyle} />
                 </ol>
                 <br />{" "}
-                <a
-                  href={url}
-                  className="gaming-button flex text-center item-center mx-30 justify-center"
-                  style={{
-                    background:
-                      "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
-                  }}
-                >
-                  Earn +{amount} points
-                </a>
               </p>
             </div>
           </div>

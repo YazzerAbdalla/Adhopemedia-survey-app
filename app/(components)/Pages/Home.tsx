@@ -37,10 +37,10 @@ export default function Home({ id, userID }: HomeProps) {
     useSelectedSortTypeContext();
   const [sortedData, setSortedData] = useState<CardsProps[]>([]);
 
-  let SortDataByKindDevice: CardsProps[];
-
   useEffect(() => {
-    setDeviceType(detectDeviceType(navigator.userAgent));
+    const deviceType = detectDeviceType(navigator.userAgent);
+    setDeviceType(deviceType);
+    setFilterKind(deviceType);
     axios
       .get(`https://adhopemedia.com/api/GetOffers/${id}/${userID}`)
       .then((res) => {
@@ -49,7 +49,6 @@ export default function Home({ id, userID }: HomeProps) {
         } else {
           setDataArr(res.data.offers);
           setSortArr(res.data.offers);
-          setFilterKind("unkown");
         }
         setLoading(false);
       })
@@ -60,22 +59,27 @@ export default function Home({ id, userID }: HomeProps) {
         setLoading(false);
       });
   }, []);
-  // Other useEffect to handle the states changes
+
   useEffect(() => {
-    SortDataByKindDevice = DeviceTypeSort(dataArr, filterKind);
-    SortDataByKindDevice = searchFilterFunction(
-      SortDataByKindDevice,
-      searchFilter
-    );
+    let sortedData: CardsProps[] = dataArr.slice(); // Copy dataArr
 
     if (selectedSortType === "High Price") {
-      SortDataByKindDevice = highSort(SortDataByKindDevice);
+      sortedData = highSort(sortedData);
     } else if (selectedSortType === "Lower Price") {
-      SortDataByKindDevice = lowSort(SortDataByKindDevice);
+      sortedData = lowSort(sortedData);
     } // No need to handle "Default" case as it remains unsorted
 
-    setSortedData(SortDataByKindDevice);
-  }, [dataArr, filterKind, searchFilter, selectedSortType]); // Dependencies for useEffect
+    setSortedData(sortedData);
+  }, [dataArr, selectedSortType]);
+
+  useEffect(() => {
+    if (!loading && !error) {
+      let sortedDataByDevice: CardsProps[] = DeviceTypeSort(dataArr, filterKind);
+      sortedDataByDevice = searchFilterFunction(sortedDataByDevice, searchFilter);
+      setSortedData(sortedDataByDevice);
+    }
+  }, [loading, error, dataArr, filterKind, searchFilter]);
+
   return (
     <div style={{ overflowX: "hidden" }}>
       {loading ? (
@@ -89,12 +93,10 @@ export default function Home({ id, userID }: HomeProps) {
           <MSearchBar />
           <FavouriteBox />
           {sortedData.length === 0 ? (
-            // Render IfNoActivities component if SortDataByKindDevice is empty
             <div className="flex justify-center">
               <IfNoActivities setNavTabs={null} />
             </div>
           ) : (
-            // Otherwise, map over SortDataByKindDevice and render MainDialog for each item
             <div className="flex w-full justify-center px-8 lg:px-24 mt-12">
               <div className="grid justify-center -space-x-1 -mx-6 grid-cols-2 lg:grid-cols-3 gap-6">
                 {sortedData.map(

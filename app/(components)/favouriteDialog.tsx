@@ -1,6 +1,5 @@
-import { useEffect } from "react";
+/* eslint-disable @next/next/no-img-element */
 import { Dialog } from "@radix-ui/react-dialog";
-
 import {
   Dialog as RadixDialog,
   DialogContent,
@@ -92,27 +91,28 @@ const FavouriteDialog = ({
           amount={amount}
           campaign_os_target={campaign_os_target}
         />
+        <DialogFooter>
+          {dialogTab !== "links" &&
+            (deviceType === "Web" ||
+              (campaign_os_target === "ios" && deviceType === "ios") ||
+              (campaign_os_target === "android" &&
+                deviceType === "android")) && (
+              <div className="w-full flex justify-center items-center ">
+                <a
+                  className="flex justify-center items-center text-[#180934] font-bold text-md py-1 px-16 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px]"
+                  style={{
+                    background:
+                      "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
+                  }}
+                  href={url}
+                >
+                  {`${amount} `}
+                  <img src={"/coinIcon.png"} alt="" width={20} height={20} />
+                </a>
+              </div>
+            )}
+        </DialogFooter>
       </DialogContent>
-      <DialogFooter>
-        {dialogTab !== "links" &&
-          (deviceType === "Web" ||
-            (campaign_os_target === "ios" && deviceType === "ios") ||
-            (campaign_os_target === "android" && deviceType === "android")) && (
-            <div className="w-full flex px-6">
-              <a
-                className="flex justify-center items-center text-[#180934] font-bold text-md py-1 px-16 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px]"
-                style={{
-                  background:
-                    "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
-                }}
-                href={url}
-              >
-                {`${amount} `}
-                <img src={"/coinIcon.png"} alt="" width={20} height={20} />
-              </a>
-            </div>
-          )}
-      </DialogFooter>
     </Dialog>
   );
 };

@@ -23,20 +23,6 @@ const DialogTabs = () => {
           <div className="bg-[#B094E5] w-[180px] h-[7px] rounded-tl-3xl rounded-tr-3xl"></div>
         )}
       </div>
-
-      {/* {deviceType !== "All" && (
-        <div className="flex flex-col justify-center items-center">
-          <div
-            onClick={() => setDialogTab("links")}
-            className="flex items-center text-nowrap text-lg px-3 py-2 cursor-pointer rounded "
-          >
-            Get link options
-          </div>
-          {dialogTab === "links" && (
-            <div className="bg-[#B094E5] w-[180px]  h-[7px] rounded-tl-3xl rounded-tr-3xl"></div>
-          )}
-        </div>
-      )} */}
     </div>
   );
 };

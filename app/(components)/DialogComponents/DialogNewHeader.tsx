@@ -1,7 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useDataContext } from "@/contexts/DataContext";
 import { CardsProps } from "@/types/cardsTypes";
-// import Image from "next/image";
 import React from "react";
 
 const DialogNewHeader = ({
@@ -45,14 +43,14 @@ const DialogNewHeader = ({
           </div>
           <div className="flex absolute right-2 bottom-[2px] justify-end py-2 ">
             <div
-              className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 max-w-[100px] min-w-[100px] min-h-[20px] max-h-[20px] rounded-[5px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
+              className="flex justify-center items-center text-[#180934] font-bold  text-md  py-1 px-16 max-w-[145px] min-w-[145px] min-h-[25px] max-h-[25px] rounded-[5px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px] "
               style={{
                 background:
                   "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",
               }}
             >
               {amount}
-              <img src={"/coinIcon.png"} alt="" width={18} height={18} />
+              <img src={"/coinIcon.png"} alt="" width={20} height={20} />
             </div>
           </div>
         </div>

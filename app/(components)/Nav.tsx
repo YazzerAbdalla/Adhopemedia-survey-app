@@ -2,8 +2,6 @@
 import { useEffect, useState } from "react";
 import { BsList } from "react-icons/bs";
 import LgSearchBar from "./LgSearchBar";
-// import Image from "next/image";
-import Link from "next/link";
 
 interface NavProps {
   navTabs: string;

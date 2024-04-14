@@ -2,7 +2,6 @@
 "use client";
 
 import { CardsProps } from "@/types/cardsTypes";
-// import Image from "next/image";
 
 export default function MainCard({
   icon,
@@ -13,7 +12,7 @@ export default function MainCard({
   campaign_os_target,
 }: CardsProps) {
   return (
-    <div className="max-w-[175px] min-w-[175px] max-h-[260px] min-h-[260px]  cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E]  lg:hidden ">
+    <div className="shadow-xl shadow-[#9741ec]  max-w-[175px] min-w-[175px] max-h-[260px] min-h-[260px]  cursor-pointer flex flex-col overflow-hidden rounded-xl border-4 border-[#4D229E]  lg:hidden ">
       <div className="w-full  max-w-[200px] min-w-[200px] max-h-[135px] min-h-[135px] ">
         <img
           className="mx-auto  max-w-[200px] min-w-[200px] max-h-[135px] min-h-[135px] "

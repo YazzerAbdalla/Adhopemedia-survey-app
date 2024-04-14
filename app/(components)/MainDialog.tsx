@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { useEffect } from "react";
 import { Dialog } from "@radix-ui/react-dialog";
 
 import {
@@ -98,13 +97,13 @@ const MainDialog = ({
         />
         <DialogFooter>
           {dialogTab !== "links" &&
-            (deviceType === "Web" ||
-              (campaign_os_target === "ios" && deviceType === "ios") ||
+            (deviceType === "web" ||
+              (campaign_os_target === "ios" && deviceType === "iOS") ||
               (campaign_os_target === "android" &&
-                deviceType === "android")) && (
-              <div className="w-full flex px-6">
+                deviceType === "Android")) && (
+              <div className="w-full flex justify-center items-center ">
                 <a
-                  className="flex justify-center items-center text-[#180934] font-bold text-md py-1 px-16 rounded-xl max-w-[100px] min-w-[100px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px]"
+                  className="flex justify-center items-center text-[#180934] font-bold text-md py-1 px-16 rounded-xl max-w-[160px] min-w-[160px] min-h-[30px] max-h-[30px] lg:max-w-[201px] lg:min-w-[201px] lg:min-h-[39px] lg:max-h-[39px]"
                   style={{
                     background:
                       "linear-gradient(92.16deg, #7655FE 0%, #EE77FF 37.1%, #FE6FFD 66.51%, #FF13DE 100%)",

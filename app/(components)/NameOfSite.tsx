@@ -5,9 +5,6 @@ export default function NameOfSite() {
     <div className="flex flex-col justify-center items-center">
       <div className="py-5  text-white text-5xl font-bold ">
         Adhopemedia
-        {/* <div className=" text-white text-xl font-bold mt-2 ml-16  ">
-          Lorem Ipsum Text
-        </div> */}
       </div>
     </div>
   );
