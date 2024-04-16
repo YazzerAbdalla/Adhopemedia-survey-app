@@ -24,6 +24,7 @@ const MainDialog = ({
   short_description,
   description,
   instructions,
+  instructions_array,
   amount,
   campaign_os_target,
   url,
@@ -79,6 +80,7 @@ const MainDialog = ({
           campaign_id={campaign_id}
           campaign_os_target={campaign_os_target}
           description={description}
+          instructions_array={instructions_array}
           instructions={instructions}
           icon={icon}
           short_description={short_description}

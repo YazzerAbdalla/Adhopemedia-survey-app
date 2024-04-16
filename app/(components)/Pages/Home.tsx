@@ -106,6 +106,7 @@ export default function Home({ id, userID }: HomeProps) {
                     short_description,
                     description,
                     instructions,
+                    instructions_array,
                     amount,
                     campaign_os_target,
                     campaign_id,
@@ -118,6 +119,7 @@ export default function Home({ id, userID }: HomeProps) {
                       short_description={short_description}
                       description={description}
                       instructions={instructions}
+                      instructions_array={instructions_array}
                       amount={amount}
                       campaign_os_target={campaign_os_target}
                       campaign_id={campaign_id}

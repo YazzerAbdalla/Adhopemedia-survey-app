@@ -47,6 +47,7 @@ const FavouriteBox = () => {
                 icon,
                 name,
                 short_description,
+                instructions_array,
                 description,
                 amount,
                 campaign_os_target,
@@ -57,6 +58,7 @@ const FavouriteBox = () => {
                     amount={amount}
                     campaign_id={campaign_id}
                     campaign_os_target={campaign_os_target}
+                    instructions_array={instructions_array}
                     description={description}
                     icon={icon}
                     short_description={short_description}

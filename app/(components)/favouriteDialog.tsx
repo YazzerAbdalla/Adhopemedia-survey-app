@@ -31,6 +31,7 @@ const FavouriteDialog = ({
   short_description,
   description,
   instructions,
+  instructions_array,
   amount,
   campaign_os_target,
   url,
@@ -75,6 +76,7 @@ const FavouriteDialog = ({
           campaign_id={campaign_id}
           instructions={instructions}
           campaign_os_target={campaign_os_target}
+          instructions_array={instructions_array}
           description={description}
           icon={icon}
           short_description={short_description}

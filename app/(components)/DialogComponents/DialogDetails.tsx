@@ -5,16 +5,10 @@ import { CardsProps } from "@/types/cardsTypes";
 import React from "react";
 
 const DialogDetails = ({
-  campaign_id,
-  icon,
   name,
-  short_description,
   description,
   instructions,
-  amount,
-  campaign_os_target,
-  url,
-  goals,
+  instructions_array,
 }: CardsProps) => {
   const { dialogTab } = useDialogTabs();
   const hrStyle: React.CSSProperties = { borderColor: "black" };
@@ -24,8 +18,8 @@ const DialogDetails = ({
   return (
     <>
       {showDetail && (
-        <div className="w-full overflow-scroll new-offer-popup__text-content overflow-y-scroll flex ">
-          <div className="flex flex-col w-[50%] gap-1 offer-instructoins">
+        <div className="w-full overflow-scroll new-offer-popup__text-content overflow-y-scroll flex flex-col">
+          <div className="flex flex-col gap-1 offer-instructoins">
             <div className="offer-description  text-wrap">
               <span className="title">Offer description :</span>
               <h1 className="text-gray-300 font-bold text-sm "> {name} : </h1>
@@ -34,6 +28,27 @@ const DialogDetails = ({
                 <div className="w-full border-t-[15px] border-b-[15px] border-[#B094E5] rounded-[14px] p-6">
                   <span className="title">Instrucions : </span>
                   <p className="description"> {instructions}</p>
+                </div>
+              )}
+              {instructions_array && (
+                <div className="new-offer-popup__steps-wrapper w-[100%]">
+                  <span className="title">All steps</span>
+                  <span className="horizontal-line"></span>
+                  <div className="steps">
+                    {instructions_array.map((item, index) => (
+                      <div key={index} className="step">
+                        <div className="step-info">
+                          <span className="step-counter">
+                            {++index}
+                          </span>
+                          <div className="text-content">
+                            <span className="title">{item}</span>
+                            <p className="text"></p>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               )}
               <span className="title">
@@ -93,83 +108,6 @@ const DialogDetails = ({
               </p>
             </div>
           </div>
-          {goals && (
-            <div className="new-offer-popup__steps-wrapper w-[50%]">
-              <span className="title">All steps</span>
-              <span className="horizontal-line"></span>
-              <div className="steps">
-                <div className="step">
-                  <div className="step-info">
-                    <span className="step-counter">1</span>
-                    <div className="text-content">
-                      <span className="title">Open and use the app.</span>
-                      <p className="text"></p>
-                    </div>
-                  </div>
-                  <div className="offer-reward">
-                    <img src="/reward-coins.svg" alt="reward" />
-                    <span className="actual-reward">3.6</span>
-                  </div>
-                </div>
-
-                <div className="step">
-                  <div className="step-info">
-                    <span className="step-counter">2</span>
-                    <div className="text-content">
-                      <span className="title">Get 1000 coins.</span>
-                      <p className="text"></p>
-                    </div>
-                  </div>
-                  <div className="offer-reward">
-                    <img src="/reward-coins.svg" alt="reward" />
-                    <span className="actual-reward">468</span>
-                  </div>
-                </div>
-
-                <div className="step">
-                  <div className="step-info">
-                    <span className="step-counter">3</span>
-                    <div className="text-content">
-                      <span className="title">Get 5000 coins.</span>
-                      <p className="text"></p>
-                    </div>
-                  </div>
-                  <div className="offer-reward">
-                    <img src="/reward-coins.svg" alt="reward" />
-                    <span className="actual-reward">3510</span>
-                  </div>
-                </div>
-
-                <div className="step">
-                  <div className="step-info">
-                    <span className="step-counter">4</span>
-                    <div className="text-content">
-                      <span className="title">Get 10000 coins.</span>
-                      <p className="text"></p>
-                    </div>
-                  </div>
-                  <div className="offer-reward">
-                    <img src="/reward-coins.svg" alt="reward" />
-                    <span className="actual-reward">9360</span>
-                  </div>
-                </div>
-
-                <div className="step">
-                  <div className="step-info">
-                    <span className="step-counter">5</span>
-                    <div className="text-content">
-                      <span className="title">Get 25000 coins.</span>
-                      <p className="text"></p>
-                    </div>
-                  </div>
-                  <div className="offer-reward">
-                    <img src="/reward-coins.svg" alt="reward" />
-                    <span className="actual-reward">35100</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       )}
     </>
