@@ -4,7 +4,7 @@ export const detectDeviceType = (userAgent: string) => {
   } else if (userAgent.match(/Android/i)) {
     return "Android";
   } else if (userAgent.match(/Macintosh|Windows|Linux/i)) {
-    return "Web";
+    return "All";
   } else {
     return "Unknown";
   }

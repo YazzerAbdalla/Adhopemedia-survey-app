@@ -2,7 +2,7 @@ import { Dispatch, Fragment, SetStateAction } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 import { CheckIcon, ChevronUpDownIcon } from "@heroicons/react/20/solid";
 
-export const platforms = ["Device Type", "All", "ios", "android"];
+export const platforms = ["Device Type", "All", "iOS", "Android"];
 interface sortProps {
   selectedPlatform: string;
   setSelectedPlatform: Dispatch<SetStateAction<string>>;

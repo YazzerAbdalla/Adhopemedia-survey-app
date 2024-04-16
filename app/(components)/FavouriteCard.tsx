@@ -36,7 +36,7 @@ export default function FavouriteCard({
         <div className=" w-fit border-[1px]  border-[#373737] rounded-3xl py-[1px] px-5 lg:px-10  justify-start">
           <img
             src={
-              campaign_os_target == "All"
+              campaign_os_target == "all"
                 ? "/desktop.svg"
                 : campaign_os_target == "android"
                 ? "/android.png"

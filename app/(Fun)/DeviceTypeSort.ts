@@ -7,15 +7,15 @@ export function DeviceTypeSort(arr: CardsProps[], filterKind: string) {
   newArr.sort((a, b) => {
     // If the campaign_os_target of a contains the filterKind but not b, place a before b
     if (
-      a.campaign_os_target.includes(filterKind) &&
-      !b.campaign_os_target.includes(filterKind)
+      a.campaign_os_target.includes(filterKind.toLowerCase()) &&
+      !b.campaign_os_target.includes(filterKind.toLowerCase())
     ) {
       return -1;
     }
-    // If the campaign_os_target of b contains the filterKind but not a, place b before a
+    // If the campaign_os_target of b contains the filterKind.toLowerCase() but not a, place b before a
     else if (
-      !a.campaign_os_target.includes(filterKind) &&
-      b.campaign_os_target.includes(filterKind)
+      !a.campaign_os_target.includes(filterKind.toLowerCase()) &&
+      b.campaign_os_target.includes(filterKind.toLowerCase())
     ) {
       return 1;
     }

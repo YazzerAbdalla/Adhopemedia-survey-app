@@ -34,7 +34,7 @@ export default function MainCard({
         <div className="w-fit mt-4 border-[rgba(255,255,255,0.5)] rad border-[1px] rounded-3xl  py-1 px-16 ">
           <img
             src={
-              campaign_os_target == "All"
+              campaign_os_target == "all"
                 ? "/desktop.svg"
                 : campaign_os_target == "android"
                 ? "/android.png"

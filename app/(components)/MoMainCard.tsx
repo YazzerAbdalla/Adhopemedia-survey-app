@@ -32,7 +32,7 @@ export default function MainCard({
           <div className="">
             <img
               src={
-                campaign_os_target == "All"
+                campaign_os_target == "all"
                   ? "/desktop.svg"
                   : campaign_os_target == "android"
                   ? "/android.png"
