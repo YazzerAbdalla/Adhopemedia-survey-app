@@ -428,7 +428,7 @@ body {
   flex-flow: column;
   row-gap: 16px;
   padding: 32px;
-  background-color: #0a1f59;
+  background-color: #1A004A80;
   border-radius: 18px;
   height: max-content;
 }
@@ -454,7 +454,7 @@ body {
   column-gap: 20px;
   justify-content: space-between;
   border-radius: 12px;
-  background: #182c63;
+  background: linear-gradient(93.43deg, #8359FE 1.1%, #F274FE 32.78%, #F772FE 58.67%, #FE53F3 71.12%, #FF26E4 100%);
   padding: 8px 10px;
 }
 .new-offer-popup__steps-wrapper .step-info {

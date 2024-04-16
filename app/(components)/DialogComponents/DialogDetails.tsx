@@ -32,7 +32,7 @@ const DialogDetails = ({
               )}
               {instructions_array && (
                 <div className="new-offer-popup__steps-wrapper w-[100%]">
-                  <span className="title">All steps</span>
+                  <span className="title ">All steps</span>
                   <span className="horizontal-line"></span>
                   <div className="steps">
                     {instructions_array.map((item, index) => (
